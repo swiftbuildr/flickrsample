@@ -14,10 +14,9 @@ protocol WeatherDetailWireframeInput {
     func present(from navigationController: UINavigationController)
 }
 
-class WeatherDetailWireframe: WeatherDetailWireframeInput  {
+class WeatherDetailWireframe: WeatherDetailWireframeInput {
 
     func present(from navigationController: UINavigationController) {
-
     }
 
     private let storyboard: UIStoryboard = .weather
@@ -47,8 +46,8 @@ class WeatherDetailWireframe: WeatherDetailWireframeInput  {
         let interactor = WeatherDetailInteractor(api: listAPI)
 
         let presenter = WeatherDetailPresenter(view: viewController,
-                                      wireframe: self,
-                                      interactor: interactor)
+                                               wireframe: self,
+                                               interactor: interactor)
 
         interactor.output = presenter
         viewController.presenter = presenter

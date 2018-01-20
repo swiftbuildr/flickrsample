@@ -5,7 +5,7 @@
 
 import UIKit
 
-class WeatherDetailViewController: UIViewController, WeatherDetailView {
+class WeatherDetailViewController: UITableViewController, WeatherDetailView {
 
     weak var presenter: WeatherDetailPresenter?
 }

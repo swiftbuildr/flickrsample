@@ -19,13 +19,13 @@ class ListAPI: GetAPI {
         self.urlSession = urlSession
     }
 
-    func get(_ completion: @escaping (Result<Json4Swift_Base>) -> Void) {
+    func get(_ completion: @escaping (Result<TopPosts>) -> Void) {
 
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: "list", ofType: "json")!)
 
         let task = urlSession.dataTask(with: url) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
-            let responseModel = try! jsonDecoder.decode(Json4Swift_Base.self, from: data!)
+            let responseModel = try! jsonDecoder.decode(TopPosts.self, from: data!)
 
             completion(.success(responseModel))
         }

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,17 +21,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rdk-zd-vSx">
-                        <rect key="frame" x="16" y="35.5" width="92" height="20.5"/>
+                        <rect key="frame" x="16" y="35.5" width="317" height="20.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ows-Gm-22g">
-                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ows-Gm-22g">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChM-ki-Rad">
-                                <rect key="frame" x="50" y="0.0" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChM-ki-Rad">
+                                <rect key="frame" x="264" y="0.0" width="53" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,6 +39,7 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Ows-Gm-22g" firstAttribute="width" secondItem="rzW-dk-ecj" secondAttribute="width" multiplier="0.75" id="3qL-WL-tti"/>
                     <constraint firstItem="rdk-zd-vSx" firstAttribute="centerY" secondItem="rzW-dk-ecj" secondAttribute="centerY" id="Yh3-EC-me6"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rdk-zd-vSx" secondAttribute="trailing" id="aTy-ky-D9i"/>
                     <constraint firstItem="rdk-zd-vSx" firstAttribute="leading" secondItem="rzW-dk-ecj" secondAttribute="leadingMargin" id="fiO-2p-0N0"/>

@@ -38,19 +38,14 @@ class ListInteractor: DataFetcher, ListInteractorInput {
                 switch result {
                     case .success(let data):
 
-                        guard let list = data.list else { return }
+                        let children = data.data.children
 
                         let formatter = DateFormatter()
                         formatter.dateStyle = .long
 
-                        let listItems: [ListEntity.ListItem] = list.flatMap {
-                            guard let dt = $0.dt,
-                                  let humidty = $0.humidity else { return nil }
-
-                            let date = Date(timeIntervalSince1970: Double(dt))
-                            return ListEntity.ListItem(title: formatter.string(from: date),
-                                                       descriptionText: String(format: "%.0d",
-                                                                               humidty))
+                        let listItems: [ListEntity.ListItem] = children.map {
+                            ListEntity.ListItem(title: $0.data.title,
+                                                descriptionText: $0.data.author)
                         }
 
                         let entity = ListEntity(listItems: listItems)
