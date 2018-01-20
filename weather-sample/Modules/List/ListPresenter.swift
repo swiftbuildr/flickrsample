@@ -8,6 +8,7 @@ import Foundation
 protocol ListPresenterInput {
     func didTapRow(row: CommandRow)
     func viewDidLoad()
+    func reloadTriggered()
 }
 
 class ListPresenter: ListPresenterInput {
@@ -28,13 +29,18 @@ class ListPresenter: ListPresenterInput {
 
     func viewDidLoad() {
 
-        interactor.getList()
-        view?.viewState = .loading
+        reloadTriggered()
     }
 
     func didTapRow(row: CommandRow) {
 
         row.command?.execute()
+    }
+    
+    func reloadTriggered() {
+        
+        view?.viewState = .loading
+        interactor.getList()
     }
 }
 

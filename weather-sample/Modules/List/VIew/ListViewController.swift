@@ -40,7 +40,7 @@ class ListViewController: UITableViewController, ListView {
 
         super.viewDidLoad()
 
-        title = "Top on Advice Animals"
+        title = "Top Advice Animals Memes"
         presenter?.viewDidLoad()
         setupTableView()
     }
@@ -70,5 +70,10 @@ class ListViewController: UITableViewController, ListView {
 
         let refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshTriggered(_:)), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc private func refreshTriggered(_ refreshControl: UIRefreshControl) {
+        presenter?.reloadTriggered()
     }
 }

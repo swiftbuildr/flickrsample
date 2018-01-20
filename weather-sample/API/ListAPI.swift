@@ -10,6 +10,19 @@ protocol GetAPI {
     func get(_ completion: @escaping (Result<Data>) -> Void)
 }
 
+//class AnyAPI<T>: GetAPI {
+//
+//    private let getAPI: GetAPI<T>
+//
+//    init<U: GetAPI>(getAPI: GetAPI<T> where U.CacheType == T) {
+//        self.getAPI = getAPI
+//    }
+//
+//    func get(_ completion: @escaping (Result<AnyAPI<Data>.Data>) -> Void) {
+//        getAPI.get(completion)
+//    }
+//}
+
 class ListAPI: GetAPI {
 
     let urlSession: URLSession
@@ -21,9 +34,10 @@ class ListAPI: GetAPI {
 
     func get(_ completion: @escaping (Result<TopPosts>) -> Void) {
 
-        let url = URL(fileURLWithPath: Bundle.main.path(forResource: "list", ofType: "json")!)
+        let liveURL = URL(string: "https://www.reddit.com/r/adviceanimals/hot.json")!
+//        let localURL = URL(fileURLWithPath: Bundle.main.path(forResource: "list", ofType: "json")!)
 
-        let task = urlSession.dataTask(with: url) { (data, response, error) in
+        let task = urlSession.dataTask(with: liveURL) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
             let responseModel = try! jsonDecoder.decode(TopPosts.self, from: data!)
 
