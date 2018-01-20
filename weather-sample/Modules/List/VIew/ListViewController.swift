@@ -13,8 +13,7 @@ class ListViewController: UIViewController, ListView {
 
     var presenter: ListPresenterInput?
 
-    @IBOutlet var tableView: UITableView!
-    
+    @IBOutlet private var tableView: UITableView!
     private var viewModel = ListViewModel(rows: [])
 
     var viewState: ViewState<ListViewModel> = .empty {
@@ -42,7 +41,6 @@ class ListViewController: UIViewController, ListView {
         title = "Weather list"
         
         tableView.registerCell(ListTableViewCell.self)
-
         presenter?.viewDidLoad()
     }
 }

@@ -9,6 +9,7 @@ struct ListEntity {
 
     struct ListItem {
         let title: String
+        let descriptionText: String
     }
     
     let listItems: [ListItem]

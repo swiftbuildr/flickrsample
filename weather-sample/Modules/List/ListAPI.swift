@@ -14,14 +14,15 @@ class ListAPI: GetAPI {
 
     let urlSession: URLSession
 
-    init() {
+    init(urlSession: URLSession) {
 
-        self.urlSession = URLSession.shared
+        self.urlSession = urlSession
     }
 
     func get(_ completion: @escaping (Result<Json4Swift_Base>) -> Void) {
 
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: "list", ofType: "json")!)
+
         let task = urlSession.dataTask(with: url) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
             let responseModel = try! jsonDecoder.decode(Json4Swift_Base.self, from: data!)

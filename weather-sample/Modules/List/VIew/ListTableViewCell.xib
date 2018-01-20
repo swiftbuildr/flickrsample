@@ -6,20 +6,21 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Jdl-pl-v3I" customClass="ListTableViewCell" customModule="weather_sample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="92" id="Jdl-pl-v3I" customClass="ListTableViewCell" customModule="weather_sample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jdl-pl-v3I" id="rzW-dk-ecj">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="341" height="91.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdk-zd-vSx">
-                        <rect key="frame" x="145.5" y="12" width="84" height="20.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rdk-zd-vSx">
+                        <rect key="frame" x="16" y="35.5" width="92" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ows-Gm-22g">
                                 <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
@@ -28,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChM-ki-Rad">
-                                <rect key="frame" x="42" y="0.0" width="42" height="20.5"/>
+                                <rect key="frame" x="50" y="0.0" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,15 +38,18 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="rdk-zd-vSx" firstAttribute="centerX" secondItem="rzW-dk-ecj" secondAttribute="centerX" id="FvC-Hs-xX6"/>
                     <constraint firstItem="rdk-zd-vSx" firstAttribute="centerY" secondItem="rzW-dk-ecj" secondAttribute="centerY" id="Yh3-EC-me6"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rdk-zd-vSx" secondAttribute="trailing" id="aTy-ky-D9i"/>
+                    <constraint firstItem="rdk-zd-vSx" firstAttribute="leading" secondItem="rzW-dk-ecj" secondAttribute="leadingMargin" id="fiO-2p-0N0"/>
+                    <constraint firstItem="rdk-zd-vSx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rzW-dk-ecj" secondAttribute="topMargin" id="m54-dt-fSS"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="rdk-zd-vSx" secondAttribute="bottom" id="pNs-MV-TCh"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="ChM-ki-Rad" id="9Ot-dt-Du4"/>
                 <outlet property="titleLabel" destination="Ows-Gm-22g" id="CFy-xG-GPM"/>
             </connections>
-            <point key="canvasLocation" x="-36" y="-67"/>
+            <point key="canvasLocation" x="-36.5" y="-43"/>
         </tableViewCell>
     </objects>
 </document>

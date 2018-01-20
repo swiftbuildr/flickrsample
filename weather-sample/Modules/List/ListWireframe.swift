@@ -48,7 +48,7 @@ class ListWireframe: ListWireframeInput {
 
     private func wireUp(viewController: ListViewController) {
 
-        let interactor = ListInteractor(api: ListAPI())
+        let interactor = ListInteractor(api: api)
 
         let presenter = ListPresenter(view: viewController,
                                       wireframe: self,

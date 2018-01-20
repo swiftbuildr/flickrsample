@@ -6,7 +6,7 @@
 import UIKit
 
 extension UIStoryboard {
-    static let weather = UIStoryboard(name: "Main", bundle: nil)
+    static let weather = UIStoryboard(name: "Detail", bundle: nil)
 }
 
 
@@ -22,9 +22,11 @@ class WeatherDetailWireframe: WeatherDetailWireframeInput  {
 
     private let storyboard: UIStoryboard = .weather
     private let viewControllerIdentifier = "WeatherDetailViewController"
+    private let listAPI: ListAPI
 
+    init(listAPI: ListAPI) {
 
-    init() {
+        self.listAPI = listAPI
     }
 
     func buildModule() -> WeatherDetailView {
@@ -42,7 +44,7 @@ class WeatherDetailWireframe: WeatherDetailWireframeInput  {
 
     func wireUp(viewController: WeatherDetailViewController) {
 
-        let interactor = WeatherDetailInteractor(api: ListAPI())
+        let interactor = WeatherDetailInteractor(api: listAPI)
 
         let presenter = WeatherDetailPresenter(view: viewController,
                                       wireframe: self,

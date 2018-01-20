@@ -5,6 +5,8 @@
 
 import Foundation
 
-class Service {
-    static var listAPI: ListAPI!
+class Services {
+
+    static var urlSession: URLSession = URLSession.shared
+    static var listAPI: ListAPI = ListAPI(urlSession: Services.urlSession)
 }
