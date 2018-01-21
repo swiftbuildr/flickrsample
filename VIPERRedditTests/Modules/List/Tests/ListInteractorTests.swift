@@ -44,14 +44,13 @@ class ListInteractorTests: XCTestCase {
         mockListAPI.stubbedRequestCompletionResult = (.success(Examples.API.topPosts), ())
 
         listInteractor.getList()
-        
+
         XCTAssertEqual(mockListInteractorOutput.invokedDidGetListCount, 1)
 
         let result = mockListInteractorOutput.invokedDidGetListParameters?.0
         XCTAssertNotNil(result?.successfulResult)
         XCTAssertEqual(result?.successfulResult?.listItems.first?.id,
                        Examples.API.topData.children.first?.data.id)
-        
         XCTAssertNil(result?.failureResult)
     }
 
@@ -80,7 +79,9 @@ class ListInteractorTests: XCTestCase {
                                                           data: .init(permalink: "permalink",
                                                                       title: "title",
                                                                       author: "author",
-                                                                      id: "1234"))])
+                                                                      id: "1234",
+                                                                      url: URL(string: "http://www.google.com"),
+                                                                      subreddit: "/r/funny"))])
         }
 
 

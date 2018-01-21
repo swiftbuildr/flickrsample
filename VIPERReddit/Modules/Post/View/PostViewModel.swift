@@ -14,12 +14,22 @@ struct PostViewModel {
     let rows: [Rowable]
 
     struct TitleRow: Rowable {
-        let reuseIdentifier = TitleImageTableViewCell.reuseIdentifier
+        let reuseIdentifier = TitleTableViewCell.reuseIdentifier
         let title: String
     }
     
     struct ImageRow: Rowable {
-        let reuseIdentifier = TitleImageTableViewCell.reuseIdentifier
+        let reuseIdentifier = ImageTableViewCell.reuseIdentifier
         let url: URL
+    }
+
+    struct AuthorRow: Rowable {
+        let reuseIdentifier = AuthorTableViewCell.reuseIdentifier
+        let text: String
+        
+        init(text: String) {
+            
+            self.text = "Author: " + text 
+        }
     }
 }

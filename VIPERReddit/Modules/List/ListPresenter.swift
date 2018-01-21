@@ -33,7 +33,7 @@ class ListPresenter: ListPresenterInput {
 
     func reloadTriggered() {
         
-        view?.viewState = .loading
+        view?.state = .loading
         interactor.getList()
     }
 }
@@ -49,9 +49,9 @@ extension ListPresenter: ListInteractorOutput {
                                                                 self.wireframe.presentPost(withId: id)
                                                             })
                 
-                view?.viewState = .loaded(viewModel: viewModelFactory.create())
+                view?.state = .loaded(viewModel: viewModelFactory.create())
             case .failure(_):
-                view?.viewState = .error
+                view?.state = .error
         }
     }
 }

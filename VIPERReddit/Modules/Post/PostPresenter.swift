@@ -5,22 +5,65 @@
 
 import Foundation
 
-class PostPresenter {
+protocol PostPresenterInput: class {
+    func viewDidLoad()
+}
+
+class PostPresenter: PostPresenterInput {
 
     private weak var view: PostView?
-    private let wireframe: PostWireframe
-    private let interactor: PostInteractor
+    private let wireframe: PostWireframeInput
+    private let interactor: PostInteractorInput
 
     init(view: PostView,
-         wireframe: PostWireframe,
-         interactor: PostInteractor) {
+         wireframe: PostWireframeInput,
+         interactor: PostInteractorInput) {
 
         self.view = view
         self.wireframe = wireframe
         self.interactor = interactor
     }
+
+    func viewDidLoad() {
+
+        interactor.retrieveEntity()
+    }
 }
 
 extension PostPresenter: PostInteractorOutput {
 
+    func finishedRetrieving(result: Result<PostEntity>) {
+
+        switch result {
+            case .success(let entity):
+
+                let viewModel = buildViewModel(entity: entity)
+                view?.state = .loaded(viewModel: viewModel)
+            case .failure(_):
+                view?.state = .error
+        }
+    }
+
+    private func buildViewModel(entity: PostEntity) -> PostViewModel {
+
+        let imageRow: PostViewModel.ImageRow?
+        if case .image(let url) = URLType(url: entity.url) {
+            imageRow = PostViewModel.ImageRow(url: url)
+        } else {
+            imageRow = nil
+        }
+
+        let titleRow = PostViewModel.TitleRow(title: entity.title)
+        let authorRow = PostViewModel.AuthorRow(text: entity.author)
+
+        let rows: [Rowable?] = [
+            imageRow,
+            titleRow,
+            authorRow,
+        ]
+
+        let viewModel = PostViewModel(title: entity.title,
+                                      rows: rows.flatMap { $0 })
+        return viewModel
+    }
 }

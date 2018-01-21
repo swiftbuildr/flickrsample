@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERReddit/Modules/Post/PostWireframe.swift"
-            timestampString = "538238546.630145"
+            timestampString = "538265121.2229249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "present(from:withId:)"
-            landmarkType = "7">
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "UIStoryboard"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERReddit/Modules/List/ListPresenter.swift"
-            timestampString = "538173269.098392"
+            timestampString = "538265121.2230181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERReddit/Modules/List/ListDataFetcher.swift"
-            timestampString = "538238546.630541"
+            timestampString = "538240183.657887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -58,45 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERReddit/Modules/List/ListDataFetcher.swift"
-            timestampString = "538238546.630601"
+            timestampString = "538240183.657971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "fetch(with:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VIPERReddit.ListInteractor.fetch(with: (), completion: (VIPERReddit.Result&lt;VIPERReddit.ListEntity&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "VIPERReddit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samuelward/Code/RedditVIPER/VIPERReddit/Modules/List/ListDataFetcher.swift"
-                  timestampString = "538238039.325181"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "25">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (VIPERReddit.Result&lt;VIPERReddit.TopPosts&gt;) -&gt; () in VIPERReddit.ListInteractor.fetch(with: (), completion: (VIPERReddit.Result&lt;VIPERReddit.ListEntity&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "VIPERReddit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samuelward/Code/RedditVIPER/VIPERReddit/Modules/List/ListDataFetcher.swift"
-                  timestampString = "538238039.327607"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "101">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERReddit/Modules/List/ListDataFetcher.swift"
-            timestampString = "538238546.63065"
+            timestampString = "538240183.658035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -122,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERReddit/Modules/List/ListDataFetcher.swift"
-            timestampString = "538238546.6307091"
+            timestampString = "538240183.658096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -138,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERRedditTests/Modules/List/Tests/ListInteractorTests.swift"
-            timestampString = "538238546.630761"
+            timestampString = "538265121.223217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -154,13 +122,205 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VIPERRedditTests/Modules/List/Tests/ListInteractorTests.swift"
-            timestampString = "538238546.631085"
+            timestampString = "538265121.223286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "test_getList_shouldReturnErrorViaOutput_whenFailure()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/Post/View/PostViewController.swift"
+            timestampString = "538265121.223349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/Post/View/PostViewController.swift"
+            timestampString = "538265121.223411"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/Post/PostlInteractor.swift"
+            timestampString = "538263528.136734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "retrieveEntity()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (VIPERReddit.Result&lt;VIPERReddit.TopPosts&gt;) -&gt; () in VIPERReddit.PostInteractor.retrieveEntity() -&gt; ()"
+                  moduleName = "VIPERReddit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelward/Code/RedditVIPER/VIPERReddit/Modules/Post/PostlInteractor.swift"
+                  timestampString = "538263160.146467"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1671">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (VIPERReddit.Result&lt;VIPERReddit.TopPosts&gt;) -&gt; () in VIPERReddit.PostInteractor.retrieveEntity() -&gt; ()"
+                  moduleName = "VIPERReddit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelward/Code/RedditVIPER/VIPERReddit/Modules/Post/PostlInteractor.swift"
+                  timestampString = "538263160.148508"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "2082">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/Post/PostlInteractor.swift"
+            timestampString = "538263528.1367871"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "retrieveEntity()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/Post/View/PostViewController.swift"
+            timestampString = "538265121.223534"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "state"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/Post/PostPresenter.swift"
+            timestampString = "538264456.237803"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "PostPresenter"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/Post/PostPresenter.swift"
+            timestampString = "538264456.237892"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "buildViewModel(entity:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VIPERReddit.PostPresenter.(buildViewModel in _860E4D2F5108FAF22DAE8138E918918B)(entity: VIPERReddit.PostEntity) -&gt; VIPERReddit.PostViewModel"
+                  moduleName = "VIPERReddit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelward/Code/RedditVIPER/VIPERReddit/Modules/Post/PostPresenter.swift"
+                  timestampString = "538263160.163884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "82">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URL) -&gt; Swift.Optional&lt;VIPERReddit.PostViewModel.ImageRow&gt; in VIPERReddit.PostPresenter.(buildViewModel in _860E4D2F5108FAF22DAE8138E918918B)(entity: VIPERReddit.PostEntity) -&gt; VIPERReddit.PostViewModel"
+                  moduleName = "VIPERReddit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuelward/Code/RedditVIPER/VIPERReddit/Modules/Post/PostPresenter.swift"
+                  timestampString = "538263160.165753"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VIPERReddit/Modules/List/VIew/ListTableViewCell.swift"
+            timestampString = "538265121.223659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewModel"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

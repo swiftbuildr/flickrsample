@@ -5,52 +5,36 @@
 
 import Foundation
 
-protocol RequestAPI {
-    associatedtype RequestedObject
-    func request(_ completion: @escaping (Result<RequestedObject>) -> Void)
-}
-
-class AnyRequestAPI<RequestedObject>: RequestAPI {
-
-    private let requestMethod: (@escaping Completion) -> Void
-    typealias Completion = (Result<RequestedObject>) -> Void
-
-    init<T: RequestAPI>(requestAPI: T) where T.RequestedObject == RequestedObject {
-
-        self.requestMethod = requestAPI.request
-    }
-
-    func request(_ completion: @escaping (Result<RequestedObject>) -> Void) {
-
-        requestMethod(completion)
-    }
-}
-
 protocol ListAPIInterface {
-     func request(_ completion: @escaping (Result<TopPosts>) -> Void)
+    func request(_ completion: @escaping (Result<TopPosts>) -> Void)
 }
 
 class ListAPI: ListAPIInterface {
-
+    
     private let urlSession: URLSession
-
+    
     init(urlSession: URLSession) {
-
+        
         self.urlSession = urlSession
     }
-
+    
     func request(_ completion: @escaping (Result<TopPosts>) -> Void) {
-
-        let liveURL = URL(string: "https://www.reddit.com/r/adviceanimals/hot.json")!
-//        let localURL = URL(fileURLWithPath: Bundle.main.path(forResource: "list", ofType: "json")!)
-
+        
+        let liveURL = URL(string: "https://www.reddit.com/r/funny/hot.json")!
+        //        let localURL = URL(fileURLWithPath: Bundle.main.path(forResource: "list", ofType: "json")!)
+        
         let task = urlSession.dataTask(with: liveURL) { (data, response, error) in
+            
+            
             let jsonDecoder = JSONDecoder()
-            let responseModel = try! jsonDecoder.decode(TopPosts.self, from: data!)
-
-            completion(.success(responseModel))
+            do {
+                let responseModel = try jsonDecoder.decode(TopPosts.self, from: data!)
+                completion(.success(responseModel))
+            } catch {
+                completion(.failure(NSError(domain: "JSON Parsing failed", code: -1, userInfo: nil)))
+            }
         }
-
+        
         task.resume()
     }
 }

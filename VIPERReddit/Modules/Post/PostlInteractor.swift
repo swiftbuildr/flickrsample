@@ -5,37 +5,44 @@
 
 import Foundation
 
-protocol WeatherDetailInteractorInput {
+protocol PostInteractorInput {
+    func retrieveEntity()
 }
 
 protocol PostInteractorOutput: class {
+    func finishedRetrieving(result: Result<PostEntity>)
 }
 
-class PostInteractor: DataFetcher, WeatherDetailInteractorInput {
+class PostInteractor: PostInteractorInput {
 
     private let api: ListAPIInterface
+    private let postId: String
+
     weak var output: PostInteractorOutput?
 
-    init(api: ListAPIInterface) {
+    init(api: ListAPIInterface, postId: String) {
 
         self.api = api
+        self.postId = postId
     }
 
-    func fetch(with context: Void, completion: @escaping (Result<PostEntity>) -> Void) {
+    func retrieveEntity() {
 
         _ = api.request() {
             result in
 
-            DispatchQueue.main.async {
+            switch result {
+                case .success(let data):
 
-                switch result {
-                    case .success(let data):
+                    guard let matchingPost = data.data.children.first(where: { $0.data.id == self.postId }) else { return }
 
-                        let entity = PostEntity()
-                        completion(.success(entity))
-                    case .failure(_):
-                        completion(.failure(NSError()))
-                }
+                    let entity = PostEntity(title: matchingPost.data.title,
+                                            author: matchingPost.data.author,
+                                            url: matchingPost.data.url)
+
+                    self.output?.finishedRetrieving(result: .success(entity))
+                case .failure(let error):
+                    self.output?.finishedRetrieving(result: .failure(error))
             }
         }
     }

@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,10 +15,88 @@
         <scene sceneID="MLL-qY-Soe">
             <objects>
                 <tableViewController storyboardIdentifier="PostViewController" id="C96-zl-vv3" customClass="PostViewController" customModule="VIPERReddit" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hwa-AW-ekQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hwa-AW-ekQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageTableViewCell" rowHeight="280" id="BFx-2g-LLy" customClass="ImageTableViewCell" customModule="VIPERReddit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="280"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BFx-2g-LLy" id="kLn-JB-jew">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="279.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TR8-aC-9Ai">
+                                            <rect key="frame" x="0.0" y="11" width="375" height="258"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="TR8-aC-9Ai" secondAttribute="height" multiplier="343:258" priority="750" id="by0-dU-VO4"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TR8-aC-9Ai" firstAttribute="width" secondItem="kLn-JB-jew" secondAttribute="width" priority="750" id="8Nk-xp-phS"/>
+                                        <constraint firstItem="TR8-aC-9Ai" firstAttribute="leading" secondItem="kLn-JB-jew" secondAttribute="leading" id="8vL-xS-dUH"/>
+                                        <constraint firstItem="TR8-aC-9Ai" firstAttribute="top" secondItem="kLn-JB-jew" secondAttribute="topMargin" id="9y0-CC-IcB"/>
+                                        <constraint firstAttribute="trailing" secondItem="TR8-aC-9Ai" secondAttribute="trailing" id="JIy-hO-h6s"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="TR8-aC-9Ai" secondAttribute="bottom" id="LxR-iZ-NTo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="headerImageView" destination="TR8-aC-9Ai" id="joP-7v-d5B"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TitleTableViewCell" rowHeight="117" id="Xji-gX-HWE" customClass="TitleTableViewCell" customModule="VIPERReddit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="308" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xji-gX-HWE" id="7Ss-kj-8S7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0el-is-oNO">
+                                            <rect key="frame" x="16" y="11" width="343" height="95"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0el-is-oNO" secondAttribute="bottom" id="DpV-h2-IYf"/>
+                                        <constraint firstItem="0el-is-oNO" firstAttribute="leading" secondItem="7Ss-kj-8S7" secondAttribute="leadingMargin" id="XDi-nN-3da"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0el-is-oNO" secondAttribute="trailing" id="hwZ-mg-4CB"/>
+                                        <constraint firstItem="0el-is-oNO" firstAttribute="top" secondItem="7Ss-kj-8S7" secondAttribute="topMargin" id="yRq-wW-2my"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="0el-is-oNO" id="wGo-Jg-ViD"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AuthorTableViewCell" id="FVW-4u-yst" customClass="AuthorTableViewCell" customModule="VIPERReddit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="425" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FVW-4u-yst" id="V6z-Ex-IVo">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgn-s4-oMP">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Rgn-s4-oMP" secondAttribute="trailing" id="1Wh-PH-Whv"/>
+                                        <constraint firstItem="Rgn-s4-oMP" firstAttribute="leading" secondItem="V6z-Ex-IVo" secondAttribute="leadingMargin" id="DoM-fn-QXn"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Rgn-s4-oMP" secondAttribute="bottom" id="IrU-N9-xYk"/>
+                                        <constraint firstItem="Rgn-s4-oMP" firstAttribute="top" secondItem="V6z-Ex-IVo" secondAttribute="topMargin" id="gJJ-1w-fi6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="Rgn-s4-oMP" id="2Im-48-3LU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="C96-zl-vv3" id="N6i-Qv-GBe"/>
                             <outlet property="delegate" destination="C96-zl-vv3" id="OL2-P6-Gsd"/>

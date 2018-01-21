@@ -5,4 +5,6 @@
 
 import Foundation
 
-protocol PostView: class { }
+protocol PostView: class {
+    var state: ViewState<PostViewModel> { get set }
+}

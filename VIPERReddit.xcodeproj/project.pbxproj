@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2F38C1464D1EE558DBCDBD7D /* Pods_VIPERRedditTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331897FC866ED5B12A7EED64 /* Pods_VIPERRedditTests.framework */; };
+		588030A1E8FA8F0D77ED5D64 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880398CF73CEA314C1292F5 /* TitleTableViewCell.swift */; };
 		588031042E51F2038E135CEC /* MockListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */; };
+		5880349B173B61BF783F6DCA /* MockPostInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588030E7BEF3FA0A88300AEC /* MockPostInteractorInput.swift */; };
 		588034E587DD777E8CA4C6AC /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */; };
 		588034E671A2A522AB43BBD2 /* MockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880369BF4AB8957D8B469F0 /* MockListView.swift */; };
+		588035C3EEC62BA20800AD8F /* PostWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803A1A7C06CA060179C197 /* PostWireframeTests.swift */; };
 		588036DC4B838B64E58F3174 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588039646A45FC9272644199 /* ListInteractorTests.swift */; };
 		5880374B9A8BACA9012D589A /* MockListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880302583CB7ABCBB20F2D8 /* MockListInteractorOutput.swift */; };
-		58803DAD6F38543B72193D25 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803D8EF271F1176C232DA0 /* Threading.swift */; };
+		58803A78F65981711B01D83E /* MockPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588039D422506137415D6D2D /* MockPostView.swift */; };
+		58803CCC932C574091E34B3B /* PostInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880321C6AE9C0A05ECD7C15 /* PostInteractorTests.swift */; };
+		58803D9A8FC5E8A60AB41EAB /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588039C6C79983CBE3BF9F4E /* URLType.swift */; };
 		58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */; };
+		58803E46EBFA06050D317806 /* PostPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803075953161EF683F0D2C /* PostPresenterTests.swift */; };
 		8A9364B32013D49F000F0F1A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364712013D49F000F0F1A /* Services.swift */; };
 		8A9364B42013D49F000F0F1A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364722013D49F000F0F1A /* AppCoordinator.swift */; };
 		8A9364B52013D49F000F0F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364732013D49F000F0F1A /* Assets.xcassets */; };
@@ -25,17 +31,15 @@
 		8A9364BB2013D49F000F0F1A /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93647E2013D49F000F0F1A /* PostEntity.swift */; };
 		8A9364BC2013D49F000F0F1A /* PostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93647F2013D49F000F0F1A /* PostPresenter.swift */; };
 		8A9364BE2013D49F000F0F1A /* PostlInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364812013D49F000F0F1A /* PostlInteractor.swift */; };
-		8A9364BF2013D49F000F0F1A /* TitleImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364832013D49F000F0F1A /* TitleImageTableViewCell.swift */; };
+		8A9364BF2013D49F000F0F1A /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364832013D49F000F0F1A /* ImageTableViewCell.swift */; };
 		8A9364C02013D49F000F0F1A /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364842013D49F000F0F1A /* Post.storyboard */; };
 		8A9364C12013D49F000F0F1A /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364852013D49F000F0F1A /* PostViewModel.swift */; };
 		8A9364C22013D49F000F0F1A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364862013D49F000F0F1A /* PostViewController.swift */; };
-		8A9364C32013D49F000F0F1A /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364872013D49F000F0F1A /* CommentsTableViewCell.xib */; };
-		8A9364C42013D49F000F0F1A /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364882013D49F000F0F1A /* CommentsTableViewCell.swift */; };
-		8A9364C52013D49F000F0F1A /* TitleImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364892013D49F000F0F1A /* TitleImageTableViewCell.xib */; };
+		8A9364C42013D49F000F0F1A /* AuthorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364882013D49F000F0F1A /* AuthorTableViewCell.swift */; };
 		8A9364C72013D49F000F0F1A /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93648C2013D49F000F0F1A /* ListEntity.swift */; };
 		8A9364C82013D49F000F0F1A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93648D2013D49F000F0F1A /* ListView.swift */; };
 		8A9364C92013D49F000F0F1A /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93648E2013D49F000F0F1A /* ListPresenter.swift */; };
-		8A9364CA2013D49F000F0F1A /* ListDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93648F2013D49F000F0F1A /* ListDataFetcher.swift */; };
+		8A9364CA2013D49F000F0F1A /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93648F2013D49F000F0F1A /* ListInteractor.swift */; };
 		8A9364CB2013D49F000F0F1A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364912013D49F000F0F1A /* ListViewController.swift */; };
 		8A9364CC2013D49F000F0F1A /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364922013D49F000F0F1A /* ListRow.swift */; };
 		8A9364CD2013D49F000F0F1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364932013D49F000F0F1A /* Main.storyboard */; };
@@ -48,8 +52,6 @@
 		8A9364D52013D49F000F0F1A /* Rowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93649D2013D49F000F0F1A /* Rowable.swift */; };
 		8A9364D62013D49F000F0F1A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93649E2013D49F000F0F1A /* Result.swift */; };
 		8A9364D72013D49F000F0F1A /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93649F2013D49F000F0F1A /* Command.swift */; };
-		8A9364D82013D49F000F0F1A /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364A02013D49F000F0F1A /* DataFetcher.swift */; };
-		8A9364D92013D49F000F0F1A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364A12013D49F000F0F1A /* Info.plist */; };
 		8A9364E12013D49F000F0F1A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364B22013D49F000F0F1A /* Info.plist */; };
 		8A9364E32013D4B4000F0F1A /* ListWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364AE2013D49F000F0F1A /* ListWireframeTests.swift */; };
 		8A9364E42013D4B8000F0F1A /* MockPostDetailWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364AA2013D49F000F0F1A /* MockPostDetailWireframeInput.swift */; };
@@ -78,13 +80,19 @@
 		51590F0C1BC3580F22088BA7 /* Pods-VIPERReddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERReddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERReddit/Pods-VIPERReddit.debug.xcconfig"; sourceTree = "<group>"; };
 		5880302583CB7ABCBB20F2D8 /* MockListInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListInteractorOutput.swift; sourceTree = "<group>"; };
 		5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListWireframeInput.swift; sourceTree = "<group>"; };
+		58803075953161EF683F0D2C /* PostPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPresenterTests.swift; sourceTree = "<group>"; };
+		588030E7BEF3FA0A88300AEC /* MockPostInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockPostInteractorInput.swift; path = VIPERRedditTests/Modules/Post/Mocks/MockPostInteractorInput.swift; sourceTree = SOURCE_ROOT; };
+		5880321C6AE9C0A05ECD7C15 /* PostInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostInteractorTests.swift; sourceTree = "<group>"; };
 		5880369BF4AB8957D8B469F0 /* MockListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListView.swift; sourceTree = "<group>"; };
 		58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListInteractorInput.swift; sourceTree = "<group>"; };
 		588039603F387D6928EAC0E0 /* VIPERRedditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERRedditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		588039646A45FC9272644199 /* ListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
+		5880398CF73CEA314C1292F5 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		588039C6C79983CBE3BF9F4E /* URLType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
+		588039D422506137415D6D2D /* MockPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockPostView.swift; path = VIPERRedditTests/Modules/Post/Mocks/MockPostView.swift; sourceTree = SOURCE_ROOT; };
+		58803A1A7C06CA060179C197 /* PostWireframeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostWireframeTests.swift; sourceTree = "<group>"; };
 		58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
 		58803D8CADC309851D1707BC /* VIPERReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		58803D8EF271F1176C232DA0 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		635DD3B3CDFEA2CDBA29C139 /* Pods_VIPERReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		820ED59EAEAF9986D70032FE /* Pods-VIPERRedditTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERRedditTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERRedditTests/Pods-VIPERRedditTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A9364712013D49F000F0F1A /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -97,17 +105,15 @@
 		8A93647E2013D49F000F0F1A /* PostEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		8A93647F2013D49F000F0F1A /* PostPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPresenter.swift; sourceTree = "<group>"; };
 		8A9364812013D49F000F0F1A /* PostlInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostlInteractor.swift; sourceTree = "<group>"; };
-		8A9364832013D49F000F0F1A /* TitleImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleImageTableViewCell.swift; sourceTree = "<group>"; };
+		8A9364832013D49F000F0F1A /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		8A9364842013D49F000F0F1A /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		8A9364852013D49F000F0F1A /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		8A9364862013D49F000F0F1A /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		8A9364872013D49F000F0F1A /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
-		8A9364882013D49F000F0F1A /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
-		8A9364892013D49F000F0F1A /* TitleImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleImageTableViewCell.xib; sourceTree = "<group>"; };
+		8A9364882013D49F000F0F1A /* AuthorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorTableViewCell.swift; sourceTree = "<group>"; };
 		8A93648C2013D49F000F0F1A /* ListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEntity.swift; sourceTree = "<group>"; };
 		8A93648D2013D49F000F0F1A /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8A93648E2013D49F000F0F1A /* ListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
-		8A93648F2013D49F000F0F1A /* ListDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDataFetcher.swift; sourceTree = "<group>"; };
+		8A93648F2013D49F000F0F1A /* ListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		8A9364912013D49F000F0F1A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		8A9364922013D49F000F0F1A /* ListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		8A9364942013D49F000F0F1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,7 +126,6 @@
 		8A93649D2013D49F000F0F1A /* Rowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rowable.swift; sourceTree = "<group>"; };
 		8A93649E2013D49F000F0F1A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		8A93649F2013D49F000F0F1A /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		8A9364A02013D49F000F0F1A /* DataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		8A9364A12013D49F000F0F1A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A9364AA2013D49F000F0F1A /* MockPostDetailWireframeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPostDetailWireframeInput.swift; sourceTree = "<group>"; };
 		8A9364AE2013D49F000F0F1A /* ListWireframeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWireframeTests.swift; sourceTree = "<group>"; };
@@ -199,6 +204,16 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		8A4C24F32014FFC70096F9FA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8A9364882013D49F000F0F1A /* AuthorTableViewCell.swift */,
+				8A9364832013D49F000F0F1A /* ImageTableViewCell.swift */,
+				5880398CF73CEA314C1292F5 /* TitleTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8A9364702013D49F000F0F1A /* VIPERReddit */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +227,6 @@
 				8A93647C2013D49F000F0F1A /* Modules */,
 				8A93649A2013D49F000F0F1A /* Protocols */,
 				8A9364A12013D49F000F0F1A /* Info.plist */,
-				58803D8EF271F1176C232DA0 /* Threading.swift */,
 			);
 			path = VIPERReddit;
 			sourceTree = "<group>";
@@ -222,6 +236,7 @@
 			children = (
 				8ACBFB8C2013DCE8000028D1 /* Model */,
 				8A9364782013D49F000F0F1A /* ListAPI.swift */,
+				588039C6C79983CBE3BF9F4E /* URLType.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -251,13 +266,10 @@
 		8A9364822013D49F000F0F1A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8A9364832013D49F000F0F1A /* TitleImageTableViewCell.swift */,
+				8A4C24F32014FFC70096F9FA /* Cells */,
 				8A9364842013D49F000F0F1A /* Post.storyboard */,
 				8A9364852013D49F000F0F1A /* PostViewModel.swift */,
 				8A9364862013D49F000F0F1A /* PostViewController.swift */,
-				8A9364872013D49F000F0F1A /* CommentsTableViewCell.xib */,
-				8A9364882013D49F000F0F1A /* CommentsTableViewCell.swift */,
-				8A9364892013D49F000F0F1A /* TitleImageTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,7 +280,7 @@
 				8A93648C2013D49F000F0F1A /* ListEntity.swift */,
 				8A93648D2013D49F000F0F1A /* ListView.swift */,
 				8A93648E2013D49F000F0F1A /* ListPresenter.swift */,
-				8A93648F2013D49F000F0F1A /* ListDataFetcher.swift */,
+				8A93648F2013D49F000F0F1A /* ListInteractor.swift */,
 				8A9364902013D49F000F0F1A /* VIew */,
 				8A9364982013D49F000F0F1A /* ListWireframe.swift */,
 			);
@@ -296,7 +308,6 @@
 				8A93649D2013D49F000F0F1A /* Rowable.swift */,
 				8A93649E2013D49F000F0F1A /* Result.swift */,
 				8A93649F2013D49F000F0F1A /* Command.swift */,
-				8A9364A02013D49F000F0F1A /* DataFetcher.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -341,6 +352,8 @@
 		8A9364A92013D49F000F0F1A /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				588030E7BEF3FA0A88300AEC /* MockPostInteractorInput.swift */,
+				588039D422506137415D6D2D /* MockPostView.swift */,
 				8A9364AA2013D49F000F0F1A /* MockPostDetailWireframeInput.swift */,
 			);
 			path = Mocks;
@@ -349,6 +362,9 @@
 		8A9364AB2013D49F000F0F1A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				58803A1A7C06CA060179C197 /* PostWireframeTests.swift */,
+				58803075953161EF683F0D2C /* PostPresenterTests.swift */,
+				5880321C6AE9C0A05ECD7C15 /* PostInteractorTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -471,14 +487,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A9364C52013D49F000F0F1A /* TitleImageTableViewCell.xib in Resources */,
 				8A9364B72013D49F000F0F1A /* list.json in Resources */,
 				8A9364CF2013D49F000F0F1A /* ListTableViewCell.xib in Resources */,
 				8A9364B62013D49F000F0F1A /* LaunchScreen.storyboard in Resources */,
 				8A9364CD2013D49F000F0F1A /* Main.storyboard in Resources */,
 				8A9364E12013D49F000F0F1A /* Info.plist in Resources */,
-				8A9364C32013D49F000F0F1A /* CommentsTableViewCell.xib in Resources */,
-				8A9364D92013D49F000F0F1A /* Info.plist in Resources */,
 				8A9364B52013D49F000F0F1A /* Assets.xcassets in Resources */,
 				8A9364C02013D49F000F0F1A /* Post.storyboard in Resources */,
 			);
@@ -600,18 +613,17 @@
 				8A9364D72013D49F000F0F1A /* Command.swift in Sources */,
 				8A9364C82013D49F000F0F1A /* ListView.swift in Sources */,
 				8A9364D62013D49F000F0F1A /* Result.swift in Sources */,
-				8A9364BF2013D49F000F0F1A /* TitleImageTableViewCell.swift in Sources */,
+				8A9364BF2013D49F000F0F1A /* ImageTableViewCell.swift in Sources */,
 				8ACBFB8E2013DCE8000028D1 /* TopPosts.swift in Sources */,
 				8A9364D42013D49F000F0F1A /* NibReusable.swift in Sources */,
 				8A9364CC2013D49F000F0F1A /* ListRow.swift in Sources */,
-				8A9364C42013D49F000F0F1A /* CommentsTableViewCell.swift in Sources */,
+				8A9364C42013D49F000F0F1A /* AuthorTableViewCell.swift in Sources */,
 				8ACBFB912013DD0E000028D1 /* PostView.swift in Sources */,
-				8A9364CA2013D49F000F0F1A /* ListDataFetcher.swift in Sources */,
+				8A9364CA2013D49F000F0F1A /* ListInteractor.swift in Sources */,
 				8A9364D32013D49F000F0F1A /* ViewState.swift in Sources */,
 				8A9364D02013D49F000F0F1A /* ListViewModelFactory.swift in Sources */,
 				8A9364B32013D49F000F0F1A /* Services.swift in Sources */,
 				8A9364D52013D49F000F0F1A /* Rowable.swift in Sources */,
-				8A9364D82013D49F000F0F1A /* DataFetcher.swift in Sources */,
 				8ACBFB922013DD0E000028D1 /* PostWireframe.swift in Sources */,
 				8A9364C22013D49F000F0F1A /* PostViewController.swift in Sources */,
 				8A9364C72013D49F000F0F1A /* ListEntity.swift in Sources */,
@@ -620,7 +632,8 @@
 				8A9364B82013D49F000F0F1A /* ListAPI.swift in Sources */,
 				8A9364BA2013D49F000F0F1A /* AppDelegate.swift in Sources */,
 				8A9364BB2013D49F000F0F1A /* PostEntity.swift in Sources */,
-				58803DAD6F38543B72193D25 /* Threading.swift in Sources */,
+				588030A1E8FA8F0D77ED5D64 /* TitleTableViewCell.swift in Sources */,
+				58803D9A8FC5E8A60AB41EAB /* URLType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +651,11 @@
 				58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */,
 				588036DC4B838B64E58F3174 /* ListInteractorTests.swift in Sources */,
 				5880374B9A8BACA9012D589A /* MockListInteractorOutput.swift in Sources */,
+				588035C3EEC62BA20800AD8F /* PostWireframeTests.swift in Sources */,
+				58803E46EBFA06050D317806 /* PostPresenterTests.swift in Sources */,
+				5880349B173B61BF783F6DCA /* MockPostInteractorInput.swift in Sources */,
+				58803A78F65981711B01D83E /* MockPostView.swift in Sources */,
+				58803CCC932C574091E34B3B /* PostInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

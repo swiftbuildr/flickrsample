@@ -5,18 +5,11 @@
 
 import UIKit
 
-extension UIStoryboard {
-    static let post = UIStoryboard(name: "Post", bundle: nil)
-}
-
 protocol PostWireframeInput {
     func present(from navigationController: UINavigationController, withId id: String)
 }
 
 class PostWireframe: PostWireframeInput {
-
-    func present(from navigationController: UINavigationController) {
-    }
 
     private let storyboard: UIStoryboard = .post
     private let viewControllerIdentifier = "PostViewController"
@@ -27,10 +20,16 @@ class PostWireframe: PostWireframeInput {
         self.listAPI = listAPI
     }
 
-    func buildModule() -> PostViewController {
+    func present(from navigationController: UINavigationController, withId id: String) {
+
+        navigationController.pushViewController(buildModule(withPostId: id), animated: true)
+    }
+
+    // MARK: - Private
+    private func buildModule(withPostId postId: String) -> PostViewController {
 
         let viewController = instantiateViewController()
-        wireUp(viewController: viewController)
+        wireUp(viewController: viewController, postId: postId)
         return viewController
     }
 
@@ -40,9 +39,9 @@ class PostWireframe: PostWireframeInput {
         return viewController as! PostViewController
     }
 
-    func wireUp(viewController: PostViewController) {
+    private func wireUp(viewController: PostViewController, postId: String) {
 
-        let interactor = PostInteractor(api: listAPI)
+        let interactor = PostInteractor(api: listAPI, postId: postId)
 
         let presenter = PostPresenter(view: viewController,
                                       wireframe: self,
@@ -51,9 +50,8 @@ class PostWireframe: PostWireframeInput {
         interactor.output = presenter
         viewController.presenter = presenter
     }
-    
-    func present(from navigationController: UINavigationController, withId id: String) {
-        
-        navigationController.pushViewController(buildModule(), animated: true)
-    }
+}
+
+extension UIStoryboard {
+    static let post = UIStoryboard(name: "Post", bundle: nil)
 }

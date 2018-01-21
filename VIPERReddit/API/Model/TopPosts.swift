@@ -24,6 +24,8 @@ struct TopPosts: Codable {
                 let title: String
                 let author: String
                 let id: String
+                let url: URL?
+                let subreddit: String
             }
         }
     }

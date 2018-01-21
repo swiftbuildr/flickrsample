@@ -6,16 +6,16 @@
 import Foundation
 @testable import VIPERReddit
 
-class MockListView: ListView {
+class MockPostView: PostView {
 
     var invokedStateSetter = false
     var invokedStateSetterCount = 0
-    var invokedState: ViewState<ListViewModel>?
-    var invokedStateList = [ViewState<ListViewModel>]()
+    var invokedState: ViewState<PostViewModel>?
+    var invokedStateList = [ViewState<PostViewModel>]()
     var invokedStateGetter = false
     var invokedStateGetterCount = 0
-    var stubbedState: ViewState<ListViewModel>!
-    var state: ViewState<ListViewModel> {
+    var stubbedState: ViewState<PostViewModel>!
+    var state: ViewState<PostViewModel> {
         set {
             invokedStateSetter = true
             invokedStateSetterCount += 1

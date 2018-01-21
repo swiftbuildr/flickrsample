@@ -11,6 +11,8 @@ struct ListEntity {
         let id: String
         let title: String
         let descriptionText: String
+        let subreddit: String
+        let url: URL?
     }
     
     let listItems: [ListItem]

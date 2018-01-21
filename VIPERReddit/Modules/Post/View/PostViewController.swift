@@ -7,23 +7,26 @@ import UIKit
 
 class PostViewController: UITableViewController, PostView {
 
-    weak var presenter: PostPresenter?
+    var presenter: PostPresenterInput?
     
-    var viewState: ViewState<PostViewModel> = .empty {
+    var state: ViewState<PostViewModel> = .empty {
         didSet {
-            switch viewState {
-            case .loaded(_):
-                tableView.refreshControl?.endRefreshing()
-                tableView.reloadData()
-                break
-            case .error:
-                tableView.refreshControl?.endRefreshing()
-                break
-            case .loading:
-                tableView.refreshControl?.beginRefreshing()
-                break
-            case .empty:
-                break
+            DispatchQueue.main.async {
+                switch self.state {
+                case .loaded(let viewModel):
+                    self.tableView.refreshControl?.endRefreshing()
+                    self.title = viewModel.title
+                    self.tableView.reloadData()
+                    break
+                case .error:
+                    self.tableView.refreshControl?.endRefreshing()
+                    break
+                case .loading:
+                    self.tableView.refreshControl?.beginRefreshing()
+                    break
+                case .empty:
+                    break
+                }
             }
         }
     }
@@ -32,25 +35,37 @@ class PostViewController: UITableViewController, PostView {
         
         super.viewDidLoad()
         
-        title = viewState.loadedViewModel?.title
-        setupTableView()
+        presenter?.viewDidLoad()
+        
+        tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
     
-        return 1
+        return state.loadedViewModel?.rows.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
-    }
-    
-    private func setupTableView() {
         
-        [TitleImageTableViewCell.self,
-         ListTableViewCell.self].forEach(tableView.registerCell)
+        guard let viewModel = state.loadedViewModel else { return UITableViewCell() }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.rows[indexPath.row].reuseIdentifier,
+                                                 for: indexPath)
+        
+        switch cell {
+            case let cell as ImageTableViewCell:
+                cell.viewModel = viewModel.rows[indexPath.row] as? PostViewModel.ImageRow
+            case let cell as TitleTableViewCell:
+                cell.viewModel = viewModel.rows[indexPath.row] as? PostViewModel.TitleRow
+            case let cell as AuthorTableViewCell:
+                cell.viewModel = viewModel.rows[indexPath.row] as? PostViewModel.AuthorRow
+            default:
+                break
+        }
+        
+        return cell
     }
 }

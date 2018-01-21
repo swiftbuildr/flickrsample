@@ -42,7 +42,7 @@ class ListPresenterTests: XCTestCase {
 
         listPresenter.viewDidLoad()
 
-        XCTAssert(mockListView.invokedViewStateList.first?.isLoading == true)
+        XCTAssert(mockListView.invokedStateList.first?.isLoading == true)
         XCTAssertEqual(mockListInteractorInput.invokedGetListCount, 1)
     }
 }

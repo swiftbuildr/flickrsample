@@ -6,4 +6,8 @@
 import Foundation
 
 struct PostEntity {
+
+    let title: String
+    let author: String
+    let url: URL?
 }

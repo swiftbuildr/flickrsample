@@ -6,6 +6,6 @@
 import Foundation
 
 protocol ListView: class {
-    var viewState: ViewState<ListViewModel> { get set }
+    var state: ViewState<ListViewModel> { get set }
 }
 
