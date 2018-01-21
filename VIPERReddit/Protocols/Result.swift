@@ -9,3 +9,25 @@ enum Result<T> {
     case success(T)
     case failure(NSError)
 }
+
+extension Result {
+
+    var successfulResult: T? {
+
+        if case .success(let data) = self {
+            return data
+        }
+
+        return nil
+    }
+
+    var failureResult: NSError? {
+
+        if case .failure(let error) = self {
+            return error
+        }
+
+        return nil
+    }
+}
+

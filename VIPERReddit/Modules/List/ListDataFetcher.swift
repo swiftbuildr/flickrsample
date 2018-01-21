@@ -45,8 +45,8 @@ class ListInteractor: DataFetcher, ListInteractorInput {
 
                     let entity = ListEntity(listItems: listItems)
                     completion(.success(entity))
-                case .failure(_):
-                    completion(.failure(NSError()))
+                case .failure(let error):
+                    completion(.failure(error))
             }
         }
     }

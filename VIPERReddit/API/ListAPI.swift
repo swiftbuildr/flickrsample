@@ -9,27 +9,28 @@ protocol RequestAPI {
     associatedtype RequestedObject
     func request(_ completion: @escaping (Result<RequestedObject>) -> Void)
 }
-//
-//class AnyRequestAPI<RequestedObject>: RequestAPI {
-//
-//    private let requestMethod: (@escaping Completion) -> Void
-//    typealias Completion = (Result<RequestedObject>) -> Void
-//
-//    init<T: RequestAPI>(requestAPI: T) where T.RequestedObject == RequestedObject {
-//        self.requestMethod = requestAPI.request
-//    }
-//
-//    func request(_ completion: @escaping (Result<RequestedObject>) -> Void) {
-//
-//        requestMethod(completion)
-//    }
-//}
+
+class AnyRequestAPI<RequestedObject>: RequestAPI {
+
+    private let requestMethod: (@escaping Completion) -> Void
+    typealias Completion = (Result<RequestedObject>) -> Void
+
+    init<T: RequestAPI>(requestAPI: T) where T.RequestedObject == RequestedObject {
+
+        self.requestMethod = requestAPI.request
+    }
+
+    func request(_ completion: @escaping (Result<RequestedObject>) -> Void) {
+
+        requestMethod(completion)
+    }
+}
 
 protocol ListAPIInterface {
      func request(_ completion: @escaping (Result<TopPosts>) -> Void)
 }
 
-class ListAPI: RequestAPI {
+class ListAPI: ListAPIInterface {
 
     private let urlSession: URLSession
 

@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		2F38C1464D1EE558DBCDBD7D /* Pods_VIPERRedditTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331897FC866ED5B12A7EED64 /* Pods_VIPERRedditTests.framework */; };
 		588031042E51F2038E135CEC /* MockListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */; };
-		5880319546525EA783408A63 /* MockListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803C7B38B9635D08539891 /* MockListInteractorOutput.swift */; };
 		588034E587DD777E8CA4C6AC /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */; };
 		588034E671A2A522AB43BBD2 /* MockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880369BF4AB8957D8B469F0 /* MockListView.swift */; };
 		588036DC4B838B64E58F3174 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588039646A45FC9272644199 /* ListInteractorTests.swift */; };
+		5880374B9A8BACA9012D589A /* MockListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880302583CB7ABCBB20F2D8 /* MockListInteractorOutput.swift */; };
 		58803DAD6F38543B72193D25 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803D8EF271F1176C232DA0 /* Threading.swift */; };
 		58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */; };
 		8A9364B32013D49F000F0F1A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364712013D49F000F0F1A /* Services.swift */; };
@@ -76,13 +76,13 @@
 		331897FC866ED5B12A7EED64 /* Pods_VIPERRedditTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERRedditTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD8426529833B9C0280DF34 /* Pods-VIPERRedditUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERRedditUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERRedditUITests/Pods-VIPERRedditUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51590F0C1BC3580F22088BA7 /* Pods-VIPERReddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERReddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERReddit/Pods-VIPERReddit.debug.xcconfig"; sourceTree = "<group>"; };
+		5880302583CB7ABCBB20F2D8 /* MockListInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListInteractorOutput.swift; sourceTree = "<group>"; };
 		5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListWireframeInput.swift; sourceTree = "<group>"; };
 		5880369BF4AB8957D8B469F0 /* MockListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListView.swift; sourceTree = "<group>"; };
 		58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListInteractorInput.swift; sourceTree = "<group>"; };
 		588039603F387D6928EAC0E0 /* VIPERRedditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERRedditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		588039646A45FC9272644199 /* ListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
 		58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
-		58803C7B38B9635D08539891 /* MockListInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockListInteractorOutput.swift; path = VIPERRedditTests/Modules/List/Mocks/MockListInteractorOutput.swift; sourceTree = SOURCE_ROOT; };
 		58803D8CADC309851D1707BC /* VIPERReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58803D8EF271F1176C232DA0 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		635DD3B3CDFEA2CDBA29C139 /* Pods_VIPERReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +194,7 @@
 				5880369BF4AB8957D8B469F0 /* MockListView.swift */,
 				58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */,
 				5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */,
+				5880302583CB7ABCBB20F2D8 /* MockListInteractorOutput.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -367,7 +368,6 @@
 				8A9364AE2013D49F000F0F1A /* ListWireframeTests.swift */,
 				58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */,
 				588039646A45FC9272644199 /* ListInteractorTests.swift */,
-				58803C7B38B9635D08539891 /* MockListInteractorOutput.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -637,7 +637,7 @@
 				588031042E51F2038E135CEC /* MockListInteractorInput.swift in Sources */,
 				58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */,
 				588036DC4B838B64E58F3174 /* ListInteractorTests.swift in Sources */,
-				5880319546525EA783408A63 /* MockListInteractorOutput.swift in Sources */,
+				5880374B9A8BACA9012D589A /* MockListInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
