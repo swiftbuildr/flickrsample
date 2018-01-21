@@ -11,7 +11,10 @@ class PostViewController: UITableViewController, PostView {
     
     var state: ViewState<PostViewModel> = .empty {
         didSet {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+
+                guard let `self` = self else { return }
+
                 switch self.state {
                 case .loaded(let viewModel):
                     self.tableView.refreshControl?.endRefreshing()

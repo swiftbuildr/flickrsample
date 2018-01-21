@@ -21,6 +21,7 @@
 		58803D9A8FC5E8A60AB41EAB /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588039C6C79983CBE3BF9F4E /* URLType.swift */; };
 		58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */; };
 		58803E46EBFA06050D317806 /* PostPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803075953161EF683F0D2C /* PostPresenterTests.swift */; };
+		8A4C24F720155A1C0096F9FA /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4C24F620155A1C0096F9FA /* UIView+Loading.swift */; };
 		8A9364B32013D49F000F0F1A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364712013D49F000F0F1A /* Services.swift */; };
 		8A9364B42013D49F000F0F1A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364722013D49F000F0F1A /* AppCoordinator.swift */; };
 		8A9364B52013D49F000F0F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364732013D49F000F0F1A /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 		58803D8CADC309851D1707BC /* VIPERReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635DD3B3CDFEA2CDBA29C139 /* Pods_VIPERReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		820ED59EAEAF9986D70032FE /* Pods-VIPERRedditTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERRedditTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERRedditTests/Pods-VIPERRedditTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A4C24F620155A1C0096F9FA /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 		8A9364712013D49F000F0F1A /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		8A9364722013D49F000F0F1A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8A9364732013D49F000F0F1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +227,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		8A4C24F520155A060096F9FA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8A4C24F620155A1C0096F9FA /* UIView+Loading.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		8A9364702013D49F000F0F1A /* VIPERReddit */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +242,7 @@
 				8A93647B2013D49F000F0F1A /* AppDelegate.swift */,
 				8A9364712013D49F000F0F1A /* Services.swift */,
 				8A9364772013D49F000F0F1A /* API */,
+				8A4C24F520155A060096F9FA /* Helpers */,
 				8A93647C2013D49F000F0F1A /* Modules */,
 				8A93649A2013D49F000F0F1A /* Protocols */,
 				8A4C24F420154DBD0096F9FA /* Resources */,
@@ -289,23 +300,23 @@
 				8A93648D2013D49F000F0F1A /* ListView.swift */,
 				8A93648E2013D49F000F0F1A /* ListPresenter.swift */,
 				8A93648F2013D49F000F0F1A /* ListInteractor.swift */,
-				8A9364902013D49F000F0F1A /* VIew */,
+				8A9364902013D49F000F0F1A /* View */,
 				8A9364982013D49F000F0F1A /* ListWireframe.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
 		};
-		8A9364902013D49F000F0F1A /* VIew */ = {
+		8A9364902013D49F000F0F1A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8A9364912013D49F000F0F1A /* ListViewController.swift */,
 				8A9364922013D49F000F0F1A /* ListRow.swift */,
-				8A9364932013D49F000F0F1A /* Main.storyboard */,
 				8A9364952013D49F000F0F1A /* ListTableViewCell.swift */,
-				8A9364962013D49F000F0F1A /* ListTableViewCell.xib */,
+				8A9364912013D49F000F0F1A /* ListViewController.swift */,
 				8A9364972013D49F000F0F1A /* ListViewModelFactory.swift */,
+				8A9364962013D49F000F0F1A /* ListTableViewCell.xib */,
+				8A9364932013D49F000F0F1A /* Main.storyboard */,
 			);
-			path = VIew;
+			path = View;
 			sourceTree = "<group>";
 		};
 		8A93649A2013D49F000F0F1A /* Protocols */ = {
@@ -614,6 +625,7 @@
 			files = (
 				8A9364C12013D49F000F0F1A /* PostViewModel.swift in Sources */,
 				8A9364BE2013D49F000F0F1A /* PostlInteractor.swift in Sources */,
+				8A4C24F720155A1C0096F9FA /* UIView+Loading.swift in Sources */,
 				8A9364B42013D49F000F0F1A /* AppCoordinator.swift in Sources */,
 				8A9364CE2013D49F000F0F1A /* ListTableViewCell.swift in Sources */,
 				8A9364BC2013D49F000F0F1A /* PostPresenter.swift in Sources */,

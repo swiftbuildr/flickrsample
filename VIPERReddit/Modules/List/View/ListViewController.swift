@@ -16,21 +16,20 @@ class ListViewController: UITableViewController, ListView {
     var state: ViewState<ListViewModel> = .empty {
         didSet {
 
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+
+                guard let `self` = self else { return }
 
                 switch self.state {
 
                     case .loaded(_):
-
-                        self.tableView.refreshControl?.endRefreshing()
                         self.tableView.reloadData()
-                        break
+                        self.tableView.removeBlurLoader()
+                        self.tableView.refreshControl?.endRefreshing()
                     case .error:
                         self.tableView.refreshControl?.endRefreshing()
-                        break
                     case .loading:
-                        self.tableView.refreshControl?.beginRefreshing()
-                        break
+                        self.tableView.showBlurLoader()
                     case .empty:
                         break
                 }
@@ -58,7 +57,9 @@ class ListViewController: UITableViewController, ListView {
 
         guard let viewModel = state.loadedViewModel else { return UITableViewCell() }
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.rows[indexPath.row].reuseIdentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.rows[
+                indexPath.row
+                ].reuseIdentifier,
                                                  for: indexPath)
 
         if let cell = cell as? ListTableViewCell {

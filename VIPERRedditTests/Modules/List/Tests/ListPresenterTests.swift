@@ -45,4 +45,26 @@ class ListPresenterTests: XCTestCase {
         XCTAssert(mockListView.invokedStateList.first?.isLoading == true)
         XCTAssertEqual(mockListInteractorInput.invokedGetListCount, 1)
     }
+
+    // MARK: - didGetList
+
+    func test_didGetList_shouldSetViewStateToLoadedWithViewModel_whenSuccess() {
+
+        let listEntity = ListEntity(listItems: [ListEntity.ListItem(id: "123",
+                                                                    title: "Test title",
+                                                                    descriptionText: "",
+                                                                    subreddit: "",
+                                                                    url: nil)])
+        listPresenter.didGetList(result: .success(listEntity))
+
+        XCTAssertEqual(mockListView.invokedStateList.first?.loadedViewModel?.rows.first?.title,
+                       "Test title")
+    }
+    
+    func test_didGetList_shouldSetViewStateToLoadedWithViewModel_whenFailure() {
+        
+        listPresenter.didGetList(result: .failure(NSError(domain: "", code: 1, userInfo: nil)))
+        
+        XCTAssert(mockListView.invokedStateList.first?.isError == true)
+    }
 }

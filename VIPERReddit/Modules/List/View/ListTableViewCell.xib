@@ -14,7 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="375" id="Jdl-pl-v3I" customClass="ListTableViewCell" customModule="VIPERReddit" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="375" id="Jdl-pl-v3I" customClass="ListTableViewCell" customModule="VIPERReddit" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jdl-pl-v3I" id="rzW-dk-ecj">
@@ -22,16 +22,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="In9-GL-gwk">
-                        <rect key="frame" x="0.0" y="0.0" width="851.33333333333337" height="499.66666666666669"/>
+                        <rect key="frame" x="0.0" y="8" width="851.33333333333337" height="491.66666666666669"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSA-8i-YzR">
-                                <rect key="frame" x="0.0" y="0.0" width="851.33333333333337" height="439.33333333333331"/>
+                                <rect key="frame" x="0.0" y="0.0" width="851.33333333333337" height="431.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rSA-8i-YzR" secondAttribute="height" multiplier="1:1" priority="750" id="Pid-kj-DYN"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rdk-zd-vSx">
-                                <rect key="frame" x="0.0" y="447.33333333333331" width="851.33333333333337" height="52.333333333333314"/>
+                                <rect key="frame" x="0.0" y="439.33333333333331" width="851.33333333333337" height="52.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ows-Gm-22g">
                                         <rect key="frame" x="0.0" y="7.9999999999999982" width="835.33333333333337" height="20.333333333333329"/>
@@ -67,9 +67,10 @@
                     <constraint firstAttribute="bottom" secondItem="In9-GL-gwk" secondAttribute="bottom" id="3Gv-wx-YoK"/>
                     <constraint firstItem="In9-GL-gwk" firstAttribute="leading" secondItem="rzW-dk-ecj" secondAttribute="leading" id="HrK-6a-iyN"/>
                     <constraint firstAttribute="trailing" secondItem="In9-GL-gwk" secondAttribute="trailing" id="LIb-5J-Y9l"/>
-                    <constraint firstItem="In9-GL-gwk" firstAttribute="top" secondItem="rzW-dk-ecj" secondAttribute="top" id="hQN-Yt-JFD"/>
+                    <constraint firstItem="In9-GL-gwk" firstAttribute="top" secondItem="rzW-dk-ecj" secondAttribute="top" constant="8" id="hQN-Yt-JFD"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="descriptionLabel" destination="ChM-ki-Rad" id="9Ot-dt-Du4"/>
                 <outlet property="headerImageView" destination="rSA-8i-YzR" id="FmX-Fq-7SL"/>
