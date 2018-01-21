@@ -14,8 +14,13 @@ Roadmap
 
 [ ] Snapshot testing for views
 
-[ ] Tranistion to RxSwift for views & view models.
+[ ] Transition to RxSwift for views & view models.
 
 [ ] Aggregate best content for the day
 
 [ ] Save content to Realm for offline usage
+
+Libraries
+---------
+
+- Kingfisher
