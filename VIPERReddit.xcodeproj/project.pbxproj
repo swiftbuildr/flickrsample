@@ -214,19 +214,27 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		8A9364702013D49F000F0F1A /* VIPERReddit */ = {
+		8A4C24F420154DBD0096F9FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8A9364712013D49F000F0F1A /* Services.swift */,
-				8A9364722013D49F000F0F1A /* AppCoordinator.swift */,
+				8A9364A12013D49F000F0F1A /* Info.plist */,
 				8A9364732013D49F000F0F1A /* Assets.xcassets */,
 				8A9364742013D49F000F0F1A /* LaunchScreen.storyboard */,
 				8A9364762013D49F000F0F1A /* list.json */,
-				8A9364772013D49F000F0F1A /* API */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8A9364702013D49F000F0F1A /* VIPERReddit */ = {
+			isa = PBXGroup;
+			children = (
+				8A9364722013D49F000F0F1A /* AppCoordinator.swift */,
 				8A93647B2013D49F000F0F1A /* AppDelegate.swift */,
+				8A9364712013D49F000F0F1A /* Services.swift */,
+				8A9364772013D49F000F0F1A /* API */,
 				8A93647C2013D49F000F0F1A /* Modules */,
 				8A93649A2013D49F000F0F1A /* Protocols */,
-				8A9364A12013D49F000F0F1A /* Info.plist */,
+				8A4C24F420154DBD0096F9FA /* Resources */,
 			);
 			path = VIPERReddit;
 			sourceTree = "<group>";
