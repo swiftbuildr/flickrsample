@@ -8,5 +8,5 @@ import Foundation
 class Services {
 
     static var urlSession: URLSession = URLSession.shared
-    static var listAPI: ListAPI = ListAPI(urlSession: Services.urlSession)
+    static var listAPI: ListAPIInterface = ListAPI(urlSession: Services.urlSession)
 }

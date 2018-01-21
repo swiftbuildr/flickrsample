@@ -20,6 +20,18 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>http://samples.openweathermap.org/data/2.5/forecast/daily?q=london,DE&amp;appid=b6907d289e10d714a6e88b30761fae22</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -51,17 +63,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>http://samples.openweathermap.org/data/2.5/forecast/daily?q=london,DE&amp;appid=b6907d289e10d714a6e88b30761fae22</key>
-			<string></string>
-		</dict>
-	</dict>
 </dict>
 </plist>

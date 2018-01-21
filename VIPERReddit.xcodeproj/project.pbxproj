@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2F38C1464D1EE558DBCDBD7D /* Pods_VIPERRedditTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331897FC866ED5B12A7EED64 /* Pods_VIPERRedditTests.framework */; };
-		6B3F061916EA9448B2518050 /* Pods_VIPERRedditUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A3DACBE532D6EDC26EC0F3 /* Pods_VIPERRedditUITests.framework */; };
+		588031042E51F2038E135CEC /* MockListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */; };
+		5880319546525EA783408A63 /* MockListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803C7B38B9635D08539891 /* MockListInteractorOutput.swift */; };
+		588034E587DD777E8CA4C6AC /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */; };
+		588034E671A2A522AB43BBD2 /* MockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880369BF4AB8957D8B469F0 /* MockListView.swift */; };
+		588036DC4B838B64E58F3174 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588039646A45FC9272644199 /* ListInteractorTests.swift */; };
+		58803DAD6F38543B72193D25 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803D8EF271F1176C232DA0 /* Threading.swift */; };
+		58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */; };
 		8A9364B32013D49F000F0F1A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364712013D49F000F0F1A /* Services.swift */; };
 		8A9364B42013D49F000F0F1A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364722013D49F000F0F1A /* AppCoordinator.swift */; };
 		8A9364B52013D49F000F0F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364732013D49F000F0F1A /* Assets.xcassets */; };
@@ -44,9 +50,7 @@
 		8A9364D72013D49F000F0F1A /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93649F2013D49F000F0F1A /* Command.swift */; };
 		8A9364D82013D49F000F0F1A /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364A02013D49F000F0F1A /* DataFetcher.swift */; };
 		8A9364D92013D49F000F0F1A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364A12013D49F000F0F1A /* Info.plist */; };
-		8A9364DB2013D49F000F0F1A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364A42013D49F000F0F1A /* Info.plist */; };
 		8A9364E12013D49F000F0F1A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A9364B22013D49F000F0F1A /* Info.plist */; };
-		8A9364E22013D4A6000F0F1A /* weather_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364A32013D49F000F0F1A /* weather_sampleUITests.swift */; };
 		8A9364E32013D4B4000F0F1A /* ListWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364AE2013D49F000F0F1A /* ListWireframeTests.swift */; };
 		8A9364E42013D4B8000F0F1A /* MockPostDetailWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364AA2013D49F000F0F1A /* MockPostDetailWireframeInput.swift */; };
 		8A9364E52013D4C0000F0F1A /* MockUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9364B02013D49F000F0F1A /* MockUINavigationController.swift */; };
@@ -65,13 +69,6 @@
 			remoteGlobalIDString = 58803EDF16204C378C2D2189;
 			remoteInfo = "weather-sample";
 		};
-		58803BD404C68231E5BD7159 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 588036F1091A18698C05B137 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58803EDF16204C378C2D2189;
-			remoteInfo = "weather-sample";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -79,9 +76,15 @@
 		331897FC866ED5B12A7EED64 /* Pods_VIPERRedditTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERRedditTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD8426529833B9C0280DF34 /* Pods-VIPERRedditUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERRedditUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERRedditUITests/Pods-VIPERRedditUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51590F0C1BC3580F22088BA7 /* Pods-VIPERReddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERReddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERReddit/Pods-VIPERReddit.debug.xcconfig"; sourceTree = "<group>"; };
+		5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListWireframeInput.swift; sourceTree = "<group>"; };
+		5880369BF4AB8957D8B469F0 /* MockListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListView.swift; sourceTree = "<group>"; };
+		58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockListInteractorInput.swift; sourceTree = "<group>"; };
 		588039603F387D6928EAC0E0 /* VIPERRedditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERRedditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		588039646A45FC9272644199 /* ListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
+		58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
+		58803C7B38B9635D08539891 /* MockListInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockListInteractorOutput.swift; path = VIPERRedditTests/Modules/List/Mocks/MockListInteractorOutput.swift; sourceTree = SOURCE_ROOT; };
 		58803D8CADC309851D1707BC /* VIPERReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		58803F0E11B79037B8383F8B /* VIPERRedditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERRedditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58803D8EF271F1176C232DA0 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		635DD3B3CDFEA2CDBA29C139 /* Pods_VIPERReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VIPERReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		820ED59EAEAF9986D70032FE /* Pods-VIPERRedditTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VIPERRedditTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VIPERRedditTests/Pods-VIPERRedditTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A9364712013D49F000F0F1A /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
@@ -119,8 +122,6 @@
 		8A93649F2013D49F000F0F1A /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		8A9364A02013D49F000F0F1A /* DataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		8A9364A12013D49F000F0F1A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A9364A32013D49F000F0F1A /* weather_sampleUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weather_sampleUITests.swift; sourceTree = "<group>"; };
-		8A9364A42013D49F000F0F1A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A9364AA2013D49F000F0F1A /* MockPostDetailWireframeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPostDetailWireframeInput.swift; sourceTree = "<group>"; };
 		8A9364AE2013D49F000F0F1A /* ListWireframeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListWireframeTests.swift; sourceTree = "<group>"; };
 		8A9364B02013D49F000F0F1A /* MockUINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUINavigationController.swift; sourceTree = "<group>"; };
@@ -140,14 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E3F73BC14DF103601A5146F /* Pods_VIPERReddit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		588039B78B90C65BFF9D6558 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B3F061916EA9448B2518050 /* Pods_VIPERRedditUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +173,6 @@
 			children = (
 				58803D8CADC309851D1707BC /* VIPERReddit.app */,
 				588039603F387D6928EAC0E0 /* VIPERRedditTests.xctest */,
-				58803F0E11B79037B8383F8B /* VIPERRedditUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,11 +182,20 @@
 			children = (
 				8A9364702013D49F000F0F1A /* VIPERReddit */,
 				8A9364A52013D49F000F0F1A /* VIPERRedditTests */,
-				8A9364A22013D49F000F0F1A /* VIPERRedditUITests */,
 				588032B4D5E11313AB402822 /* Products */,
 				2158F666A17CF7BAB5C5AA39 /* Pods */,
 				C3E093AC2C28C57CF2514255 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		8A4C24F02014B5C10096F9FA /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5880369BF4AB8957D8B469F0 /* MockListView.swift */,
+				58803862A181E5A5AC1AA272 /* MockListInteractorInput.swift */,
+				5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		8A9364702013D49F000F0F1A /* VIPERReddit */ = {
@@ -210,6 +211,7 @@
 				8A93647C2013D49F000F0F1A /* Modules */,
 				8A93649A2013D49F000F0F1A /* Protocols */,
 				8A9364A12013D49F000F0F1A /* Info.plist */,
+				58803D8EF271F1176C232DA0 /* Threading.swift */,
 			);
 			path = VIPERReddit;
 			sourceTree = "<group>";
@@ -298,21 +300,11 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		8A9364A22013D49F000F0F1A /* VIPERRedditUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8A9364A32013D49F000F0F1A /* weather_sampleUITests.swift */,
-				8A9364A42013D49F000F0F1A /* Info.plist */,
-			);
-			path = VIPERRedditUITests;
-			sourceTree = "<group>";
-		};
 		8A9364A52013D49F000F0F1A /* VIPERRedditTests */ = {
 			isa = PBXGroup;
 			children = (
+				8A9364A72013D49F000F0F1A /* Modules */,
 				8A9364A62013D49F000F0F1A /* Mocks */,
-				8A9364B02013D49F000F0F1A /* MockUINavigationController.swift */,
-				8A9364B12013D49F000F0F1A /* MockListAPI.swift */,
 				8A9364B22013D49F000F0F1A /* Info.plist */,
 			);
 			path = VIPERRedditTests;
@@ -321,7 +313,8 @@
 		8A9364A62013D49F000F0F1A /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				8A9364A72013D49F000F0F1A /* Modules */,
+				8A9364B02013D49F000F0F1A /* MockUINavigationController.swift */,
+				8A9364B12013D49F000F0F1A /* MockListAPI.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -362,6 +355,7 @@
 		8A9364AC2013D49F000F0F1A /* List */ = {
 			isa = PBXGroup;
 			children = (
+				8A4C24F02014B5C10096F9FA /* Mocks */,
 				8A9364AD2013D49F000F0F1A /* Tests */,
 			);
 			path = List;
@@ -371,6 +365,9 @@
 			isa = PBXGroup;
 			children = (
 				8A9364AE2013D49F000F0F1A /* ListWireframeTests.swift */,
+				58803B4FCC2FE8F77740B802 /* ListPresenterTests.swift */,
+				588039646A45FC9272644199 /* ListInteractorTests.swift */,
+				58803C7B38B9635D08539891 /* MockListInteractorOutput.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -396,27 +393,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58803111D63502CBC80C333E /* VIPERRedditUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 588035B90394FF1AAFF66F17 /* Build configuration list for PBXNativeTarget "VIPERRedditUITests" */;
-			buildPhases = (
-				D6757274126F99B82C548D99 /* [CP] Check Pods Manifest.lock */,
-				58803F21FC58FD5513556AF5 /* Sources */,
-				588039B78B90C65BFF9D6558 /* Frameworks */,
-				58803250A0CBA6F68F5E1F12 /* Resources */,
-				C5AE325FE8EA913D0390F681 /* [CP] Embed Pods Frameworks */,
-				550ADBB7F324320A9C45BB03 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5880371F9CF63875487E297F /* PBXTargetDependency */,
-			);
-			name = VIPERRedditUITests;
-			productName = "weather-sampleUITests";
-			productReference = 58803F0E11B79037B8383F8B /* VIPERRedditUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		588039D6BB490B181D72F0AB /* VIPERRedditTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 588037C7D5E9B6A929EFF511 /* Build configuration list for PBXNativeTarget "VIPERRedditTests" */;
@@ -465,6 +441,11 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = "Swiftbuildr Ltd";
+				TargetAttributes = {
+					588039D6BB490B181D72F0AB = {
+						TestTargetID = 58803EDF16204C378C2D2189;
+					};
+				};
 			};
 			buildConfigurationList = 588033E293F12265C51D174E /* Build configuration list for PBXProject "VIPERReddit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -481,25 +462,16 @@
 			targets = (
 				58803EDF16204C378C2D2189 /* VIPERReddit */,
 				588039D6BB490B181D72F0AB /* VIPERRedditTests */,
-				58803111D63502CBC80C333E /* VIPERRedditUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		58803250A0CBA6F68F5E1F12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		588039E79A6BA9E1AA61ED81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8A9364C52013D49F000F0F1A /* TitleImageTableViewCell.xib in Resources */,
-				8A9364DB2013D49F000F0F1A /* Info.plist in Resources */,
 				8A9364B72013D49F000F0F1A /* list.json in Resources */,
 				8A9364CF2013D49F000F0F1A /* ListTableViewCell.xib in Resources */,
 				8A9364B62013D49F000F0F1A /* LaunchScreen.storyboard in Resources */,
@@ -537,21 +509,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VIPERReddit/Pods-VIPERReddit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		550ADBB7F324320A9C45BB03 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VIPERRedditUITests/Pods-VIPERRedditUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		708D5707E6F9434C5CBE4361 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,21 +539,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C5AE325FE8EA913D0390F681 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VIPERRedditUITests/Pods-VIPERRedditUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CBB1E852CE76F45ACF9E97FF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -625,21 +567,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VIPERRedditTests/Pods-VIPERRedditTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D6757274126F99B82C548D99 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E72C5806AC26914B35CFDA9D /* [CP] Embed Pods Frameworks */ = {
@@ -693,6 +620,7 @@
 				8A9364B82013D49F000F0F1A /* ListAPI.swift in Sources */,
 				8A9364BA2013D49F000F0F1A /* AppDelegate.swift in Sources */,
 				8A9364BB2013D49F000F0F1A /* PostEntity.swift in Sources */,
+				58803DAD6F38543B72193D25 /* Threading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,14 +632,12 @@
 				8A9364E32013D4B4000F0F1A /* ListWireframeTests.swift in Sources */,
 				8A9364E42013D4B8000F0F1A /* MockPostDetailWireframeInput.swift in Sources */,
 				8A9364E52013D4C0000F0F1A /* MockUINavigationController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58803F21FC58FD5513556AF5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A9364E22013D4A6000F0F1A /* weather_sampleUITests.swift in Sources */,
+				588034E587DD777E8CA4C6AC /* ListPresenterTests.swift in Sources */,
+				588034E671A2A522AB43BBD2 /* MockListView.swift in Sources */,
+				588031042E51F2038E135CEC /* MockListInteractorInput.swift in Sources */,
+				58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */,
+				588036DC4B838B64E58F3174 /* ListInteractorTests.swift in Sources */,
+				5880319546525EA783408A63 /* MockListInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,11 +648,6 @@
 			isa = PBXTargetDependency;
 			target = 58803EDF16204C378C2D2189 /* VIPERReddit */;
 			targetProxy = 58803B60B96B6B4D8C137607 /* PBXContainerItemProxy */;
-		};
-		5880371F9CF63875487E297F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58803EDF16204C378C2D2189 /* VIPERReddit */;
-			targetProxy = 58803BD404C68231E5BD7159 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -757,7 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VIPERReddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "swiftbuildr.weather-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = swiftbuildr.VIPERReddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -768,14 +689,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 820ED59EAEAF9986D70032FE /* Pods-VIPERRedditTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/weather-sample.app/weather-sample";
-				INFOPLIST_FILE = "weather-sampleTests/Info.plist";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VIPERRedditTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "swiftbuildr.weather-sampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = swiftbuildr.VIPERRedditTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPERReddit.app/VIPERReddit";
 			};
 			name = Release;
 		};
@@ -783,14 +704,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27646F4EF5230C99515D7982 /* Pods-VIPERRedditTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/weather-sample.app/weather-sample";
-				INFOPLIST_FILE = "weather-sampleTests/Info.plist";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VIPERRedditTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "swiftbuildr.weather-sampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = swiftbuildr.VIPERRedditTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPERReddit.app/VIPERReddit";
 			};
 			name = Debug;
 		};
@@ -801,7 +722,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VIPERReddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "swiftbuildr.weather-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = swiftbuildr.VIPERReddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -865,20 +786,6 @@
 			};
 			name = Debug;
 		};
-		5880372774C0F3E8B131C147 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A88BDECE236380BEBF922A1B /* Pods-VIPERRedditUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = "weather-sampleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "swiftbuildr.weather-sampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "weather-sample";
-			};
-			name = Release;
-		};
 		58803C1704D3BB7BBBECA65A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -929,20 +836,6 @@
 			};
 			name = Release;
 		};
-		58803E2AABF30CC2D80EEC35 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FD8426529833B9C0280DF34 /* Pods-VIPERRedditUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = "weather-sampleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "swiftbuildr.weather-sampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "weather-sample";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -951,15 +844,6 @@
 			buildConfigurations = (
 				5880370F399C384F80B29840 /* Debug */,
 				58803C1704D3BB7BBBECA65A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		588035B90394FF1AAFF66F17 /* Build configuration list for PBXNativeTarget "VIPERRedditUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				58803E2AABF30CC2D80EEC35 /* Debug */,
-				5880372774C0F3E8B131C147 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

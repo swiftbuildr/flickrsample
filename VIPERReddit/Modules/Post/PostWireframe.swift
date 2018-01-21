@@ -20,9 +20,9 @@ class PostWireframe: PostWireframeInput {
 
     private let storyboard: UIStoryboard = .post
     private let viewControllerIdentifier = "PostViewController"
-    private let listAPI: ListAPI
+    private let listAPI: ListAPIInterface
 
-    init(listAPI: ListAPI) {
+    init(listAPI: ListAPIInterface) {
 
         self.listAPI = listAPI
     }

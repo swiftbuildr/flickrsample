@@ -19,4 +19,29 @@ extension ViewState {
         guard case .loaded(let viewModel) = self else { return nil }
         return viewModel
     }
+
+    var isLoading: Bool {
+
+        if case .loading = self {
+            return true
+        }
+
+        return false
+    }
+    var isEmpty: Bool {
+
+        if case .empty = self {
+            return true
+        }
+
+        return false
+    }
+    var isError: Bool {
+
+        if case .error = self {
+            return true
+        }
+
+        return false
+    }
 }

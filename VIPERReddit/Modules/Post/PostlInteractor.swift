@@ -13,17 +13,17 @@ protocol PostInteractorOutput: class {
 
 class PostInteractor: DataFetcher, WeatherDetailInteractorInput {
 
-    private let api: ListAPI
+    private let api: ListAPIInterface
     weak var output: PostInteractorOutput?
 
-    init(api: ListAPI) {
+    init(api: ListAPIInterface) {
 
         self.api = api
     }
 
     func fetch(with context: Void, completion: @escaping (Result<PostEntity>) -> Void) {
 
-        _ = api.get() {
+        _ = api.request() {
             result in
 
             DispatchQueue.main.async {

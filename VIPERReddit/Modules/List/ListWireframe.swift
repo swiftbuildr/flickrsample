@@ -18,14 +18,14 @@ class ListWireframe: ListWireframeInput {
 
     private let navigationController: UINavigationController
     private let postWireframe: PostWireframeInput
-    private let api: ListAPI
+    private let api: ListAPIInterface
 
     private let storyboard: UIStoryboard = .list
     private let viewControllerIdentifier = "ListViewController"
 
 
     init(navigationController: UINavigationController,
-         api: ListAPI,
+         api: ListAPIInterface,
          postWireframe: PostWireframeInput) {
 
         self.navigationController = navigationController
@@ -33,7 +33,19 @@ class ListWireframe: ListWireframeInput {
         self.postWireframe = postWireframe
     }
 
-    func buildModule() -> ListViewController {
+    // MARK: - ListWireframeInput
+    func presentPost(withId id: String) {
+        
+        postWireframe.present(from: navigationController, withId: id)
+    }
+    
+    func present() {
+        navigationController.viewControllers = [buildModule()]
+    }
+
+    // MARK: - Private
+
+    private func buildModule() -> ListViewController {
 
         let viewController = instantiateViewController()
         wireUp(viewController: viewController)
@@ -57,14 +69,5 @@ class ListWireframe: ListWireframeInput {
         interactor.output = presenter
         viewController.presenter = presenter
     }
-    
-    // MARK: - ListWireframeInput
-    func presentPost(withId id: String) {
-        
-        postWireframe.present(from: navigationController, withId: id)
-    }
-    
-    func present() {
-        navigationController.viewControllers = [buildModule()]
-    }
+
 }

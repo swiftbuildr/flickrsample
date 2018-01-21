@@ -5,34 +5,40 @@
 
 import Foundation
 
-protocol GetAPI {
-    associatedtype Data
-    func get(_ completion: @escaping (Result<Data>) -> Void)
+protocol RequestAPI {
+    associatedtype RequestedObject
+    func request(_ completion: @escaping (Result<RequestedObject>) -> Void)
 }
-
-//class AnyAPI<T>: GetAPI {
 //
-//    private let getAPI: GetAPI<T>
+//class AnyRequestAPI<RequestedObject>: RequestAPI {
 //
-//    init<U: GetAPI>(getAPI: GetAPI<T> where U.CacheType == T) {
-//        self.getAPI = getAPI
+//    private let requestMethod: (@escaping Completion) -> Void
+//    typealias Completion = (Result<RequestedObject>) -> Void
+//
+//    init<T: RequestAPI>(requestAPI: T) where T.RequestedObject == RequestedObject {
+//        self.requestMethod = requestAPI.request
 //    }
 //
-//    func get(_ completion: @escaping (Result<AnyAPI<Data>.Data>) -> Void) {
-//        getAPI.get(completion)
+//    func request(_ completion: @escaping (Result<RequestedObject>) -> Void) {
+//
+//        requestMethod(completion)
 //    }
 //}
 
-class ListAPI: GetAPI {
+protocol ListAPIInterface {
+     func request(_ completion: @escaping (Result<TopPosts>) -> Void)
+}
 
-    let urlSession: URLSession
+class ListAPI: RequestAPI {
+
+    private let urlSession: URLSession
 
     init(urlSession: URLSession) {
 
         self.urlSession = urlSession
     }
 
-    func get(_ completion: @escaping (Result<TopPosts>) -> Void) {
+    func request(_ completion: @escaping (Result<TopPosts>) -> Void) {
 
         let liveURL = URL(string: "https://www.reddit.com/r/adviceanimals/hot.json")!
 //        let localURL = URL(fileURLWithPath: Bundle.main.path(forResource: "list", ofType: "json")!)

@@ -15,10 +15,10 @@ protocol ListInteractorOutput: class {
 
 class ListInteractor: DataFetcher, ListInteractorInput {
 
-    private let api: ListAPI
+    private let api: ListAPIInterface
     weak var output: ListInteractorOutput?
 
-    init(api: ListAPI) {
+    init(api: ListAPIInterface) {
 
         self.api = api
     }
@@ -30,29 +30,23 @@ class ListInteractor: DataFetcher, ListInteractorInput {
 
     func fetch(with context: Void, completion: @escaping (Result<ListEntity>) -> Void) {
 
-        _ = api.get() {
+        _ = api.request() {
             result in
 
-            DispatchQueue.main.async {
+            switch result {
+                case .success(let data):
 
-                switch result {
-                    case .success(let data):
+                    let children = data.data.children
 
-                        let children = data.data.children
+                    let listItems: [ListEntity.ListItem] = children.map {
+                        ListEntity.ListItem(id: $0.data.id, title: $0.data.title,
+                                            descriptionText: $0.data.author)
+                    }
 
-                        let formatter = DateFormatter()
-                        formatter.dateStyle = .long
-
-                        let listItems: [ListEntity.ListItem] = children.map {
-                            ListEntity.ListItem(id: $0.data.id, title: $0.data.title,
-                                                descriptionText: $0.data.author)
-                        }
-
-                        let entity = ListEntity(listItems: listItems)
-                        completion(.success(entity))
-                    case .failure(_):
-                        completion(.failure(NSError()))
-                }
+                    let entity = ListEntity(listItems: listItems)
+                    completion(.success(entity))
+                case .failure(_):
+                    completion(.failure(NSError()))
             }
         }
     }
