@@ -3,9 +3,6 @@
 // Copyright (c) 2018 Swiftbuildr Ltd. All rights reserved.
 //
 
-import Foundation
-@testable import VIPERReddit
-
 import XCTest
 @testable import VIPERReddit
 
