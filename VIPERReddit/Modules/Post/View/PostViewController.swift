@@ -16,17 +16,13 @@ class PostViewController: UITableViewController, PostView {
                 guard let `self` = self else { return }
 
                 switch self.state {
-                case .loaded(let viewModel):
-                    self.tableView.refreshControl?.endRefreshing()
-                    self.title = viewModel.title
+                case .loaded:
+                    self.tableView.removeBlurLoader()
                     self.tableView.reloadData()
-                    break
                 case .error:
-                    self.tableView.refreshControl?.endRefreshing()
-                    break
+                    self.tableView.showBlurLoader()
                 case .loading:
-                    self.tableView.refreshControl?.beginRefreshing()
-                    break
+                    self.tableView.showBlurLoader()
                 case .empty:
                     break
                 }
