@@ -1,6 +1,0 @@
-framework module Pods_VIPERReddit {
-  umbrella header "Pods-VIPERReddit-umbrella.h"
-
-  export *
-  module * { export * }
-}
