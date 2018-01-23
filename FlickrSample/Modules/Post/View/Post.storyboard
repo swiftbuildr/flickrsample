@@ -73,30 +73,63 @@
                                     <outlet property="titleLabel" destination="0el-is-oNO" id="wGo-Jg-ViD"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AuthorTableViewCell" id="FVW-4u-yst" customClass="AuthorTableViewCell" customModule="FlickrSample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="425" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MetaDataTableViewCell" rowHeight="155" id="FVW-4u-yst" customClass="MetaDataTableViewCell" customModule="FlickrSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="425" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FVW-4u-yst" id="V6z-Ex-IVo">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgn-s4-oMP">
-                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cg2-Aq-dtZ">
+                                            <rect key="frame" x="16" y="11" width="343" height="102.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgn-s4-oMP" userLabel="Description">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6F-WB-QMh">
+                                                    <rect key="frame" x="0.0" y="20.5" width="343" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1g-ow-bRH" userLabel="Published">
+                                                    <rect key="frame" x="0.0" y="41" width="343" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qn-nS-rhc" userLabel="Date Taken">
+                                                    <rect key="frame" x="0.0" y="61.5" width="343" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7A-zN-c02" userLabel="Tags">
+                                                    <rect key="frame" x="0.0" y="82" width="343" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Rgn-s4-oMP" secondAttribute="trailing" id="1Wh-PH-Whv"/>
-                                        <constraint firstItem="Rgn-s4-oMP" firstAttribute="leading" secondItem="V6z-Ex-IVo" secondAttribute="leadingMargin" id="DoM-fn-QXn"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Rgn-s4-oMP" secondAttribute="bottom" id="IrU-N9-xYk"/>
-                                        <constraint firstItem="Rgn-s4-oMP" firstAttribute="top" secondItem="V6z-Ex-IVo" secondAttribute="topMargin" id="gJJ-1w-fi6"/>
+                                        <constraint firstItem="cg2-Aq-dtZ" firstAttribute="top" secondItem="V6z-Ex-IVo" secondAttribute="topMargin" id="SJT-yE-h7A"/>
+                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="cg2-Aq-dtZ" secondAttribute="bottom" id="TZm-Eh-PMC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cg2-Aq-dtZ" secondAttribute="trailing" id="ffs-Jw-RV7"/>
+                                        <constraint firstItem="cg2-Aq-dtZ" firstAttribute="leading" secondItem="V6z-Ex-IVo" secondAttribute="leadingMargin" id="yNs-VG-DC4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="titleLabel" destination="Rgn-s4-oMP" id="2Im-48-3LU"/>
+                                    <outlet property="authorLabel" destination="R6F-WB-QMh" id="XaD-gb-zRp"/>
+                                    <outlet property="dateTakenLabel" destination="8qn-nS-rhc" id="dMh-ns-20o"/>
+                                    <outlet property="descriptionTextLabel" destination="Rgn-s4-oMP" id="APx-hE-jXM"/>
+                                    <outlet property="publishedLabel" destination="f1g-ow-bRH" id="2Sl-sr-66m"/>
+                                    <outlet property="tagsLabel" destination="N7A-zN-c02" id="hDs-mw-qLc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -5,14 +5,15 @@
 
 import Foundation
 
-//struct PostEntity {
-//
-//    let author_id: String
-//    let title: String
-//    let url: URL
-//    let mediaURL: URL
-//    let descriptionText: String
-//    let author: String
-//    let dateTaken: Date
-//    let published: Date
-//}
+protocol PostEntity {
+    var title: String { get }
+    var link: URL { get }
+    var media: Media { get }
+    var date_taken: Date { get }
+    var description: String { get }
+    var published: Date { get }
+    var author: String { get }
+    var author_id: String { get }
+    var tags: String { get }
+}
+

@@ -59,8 +59,8 @@ class PostViewController: UITableViewController, PostView {
                 cell.viewModel = viewModel.rows[indexPath.row] as? PostViewModel.ImageRow
             case let cell as TitleTableViewCell:
                 cell.viewModel = viewModel.rows[indexPath.row] as? PostViewModel.TitleRow
-            case let cell as AuthorTableViewCell:
-                cell.viewModel = viewModel.rows[indexPath.row] as? PostViewModel.AuthorRow
+            case let cell as MetaDataTableViewCell:
+                cell.viewModel = viewModel.rows[indexPath.row] as? PostViewModel.MetaDataRow
             default:
                 break
         }

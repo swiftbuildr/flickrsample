@@ -53,7 +53,11 @@ extension PostPresenter: PostInteractorOutput {
         }
 
         let titleRow = PostViewModel.TitleRow(title: entity.title)
-        let authorRow = PostViewModel.AuthorRow(text: entity.author)
+        let authorRow = PostViewModel.MetaDataRow(descriptionText: entity.description,
+                                                  author: entity.author,
+                                                  published: entity.published,
+                                                  dateTaken: entity.date_taken,
+                                                  tags: entity.tags)
 
         let rows: [Rowable?] = [
             imageRow,
