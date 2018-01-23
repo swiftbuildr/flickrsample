@@ -10,15 +10,15 @@ class ListInteractorTests: XCTestCase {
 
     var listInteractor: ListInteractor!
 
-    private var mockListAPI: MockListAPI!
+    private var mockListAPI: MockPublicFeedAPI!
     private var mockListInteractorOutput: MockListInteractorOutput!
 
     override func setUp() {
 
         super.setUp()
-        mockListAPI = MockListAPI()
+        mockListAPI = MockPublicFeedAPI()
         mockListInteractorOutput = MockListInteractorOutput()
-        
+
         listInteractor = ListInteractor(api: mockListAPI)
         listInteractor.output = mockListInteractorOutput
     }
@@ -36,12 +36,12 @@ class ListInteractorTests: XCTestCase {
     func test_getList_shouldInvokeRequestOnAPI() {
 
         listInteractor.getList()
-        XCTAssertEqual(mockListAPI.invokedRequestCount, 1)
+        XCTAssertEqual(mockListAPI.invokedMakeRequestCount, 1)
     }
 
     func test_getList_shouldReturnEntityViaOutput_whenSuccess() {
 
-        mockListAPI.stubbedRequestCompletionResult = (.success(Examples.API.topPosts), ())
+        mockListAPI.stubbedMakeRequestCompletionResult = (.success(Examples.API.publicFeed), ())
 
         listInteractor.getList()
 
@@ -49,14 +49,14 @@ class ListInteractorTests: XCTestCase {
 
         let result = mockListInteractorOutput.invokedDidGetListParameters?.0
         XCTAssertNotNil(result?.successfulResult)
-        XCTAssertEqual(result?.successfulResult?.listItems.first?.id,
-                       Examples.API.topData.children.first?.data.id)
+        XCTAssertEqual(result?.successfulResult?.listItems.first?.author_id,
+                       Examples.API.publicFeedItem.author_id)
         XCTAssertNil(result?.failureResult)
     }
 
     func test_getList_shouldReturnErrorViaOutput_whenFailure() {
 
-        mockListAPI.stubbedRequestCompletionResult = (.failure(Examples.error), ())
+        mockListAPI.stubbedMakeRequestCompletionResult = (.failure(Examples.error), ())
 
         listInteractor.getList()
 
@@ -65,26 +65,5 @@ class ListInteractorTests: XCTestCase {
         let result = mockListInteractorOutput.invokedDidGetListParameters?.0
         XCTAssertNotNil(result?.failureResult)
         XCTAssertNil(result?.successfulResult)
-    }
-
-    struct Examples {
-
-        struct API {
-
-            static let topPosts = TopPosts(kind: "kind",
-                                           data: API.topData)
-
-            static let topData = TopPosts.TopData(modhash: "modHash",
-                                                  children: [TopPosts.TopData.Children(
-                                                          data: .init(permalink: "permalink",
-                                                                      title: "title",
-                                                                      author: "author",
-                                                                      id: "1234",
-                                                                      url: URL(string: "http://www.google.com"),
-                                                                      subreddit: "/r/funny"))])
-        }
-
-
-        static let error = NSError(domain: "", code: 9, userInfo: nil)
     }
 }

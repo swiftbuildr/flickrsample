@@ -11,7 +11,7 @@ class MockListInteractorOutput: ListInteractorOutput {
     var invokedDidGetList = false
     var invokedDidGetListCount = 0
     var invokedDidGetListParameters: (result: Result<ListEntity>, Void)?
-    var invokedDidGetListParametersList = [(result: Result < ListEntity>, Void)]()
+    var invokedDidGetListParametersList = [(result: Result <ListEntity>, Void)]()
 
     func didGetList(result: Result<ListEntity>) {
 

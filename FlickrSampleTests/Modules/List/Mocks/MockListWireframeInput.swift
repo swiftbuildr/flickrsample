@@ -8,17 +8,17 @@ import Foundation
 
 class MockListWireframeInput: ListWireframeInput {
 
-    var invokedPresentPost = false
-    var invokedPresentPostCount = 0
-    var invokedPresentPostParameters: (id: String, Void)?
-    var invokedPresentPostParametersList = [(id: String, Void)]()
+    var invokedPresentItem = false
+    var invokedPresentItemCount = 0
+    var invokedPresentItemParameters: (id: String, Void)?
+    var invokedPresentItemParametersList = [(id: String, Void)]()
 
-    func presentPost(withId id: String) {
+    func presentItem(withId id: String) {
 
-        invokedPresentPost = true
-        invokedPresentPostCount += 1
-        invokedPresentPostParameters = (id, ())
-        invokedPresentPostParametersList.append((id, ()))
+        invokedPresentItem = true
+        invokedPresentItemCount += 1
+        invokedPresentItemParameters = (id, ())
+        invokedPresentItemParametersList.append((id, ()))
     }
 
     var invokedPresent = false

@@ -8,13 +8,13 @@ import Foundation
 class ListViewModelFactory {
 
     private let listEntity: ListEntity
-    private let presentPostWithId: (String) -> Void
+    private let presentItemWithId: (String) -> Void
 
     init(listEntity: ListEntity,
-         presentPostWithId: @escaping (String) -> Void) {
+         presentItemWithId: @escaping (String) -> Void) {
 
         self.listEntity = listEntity
-        self.presentPostWithId = presentPostWithId
+        self.presentItemWithId = presentItemWithId
     }
 
     func create() -> ListViewModel {
@@ -26,9 +26,8 @@ class ListViewModelFactory {
     private func transformToRow(listItem: ListEntity.ListItem) -> ListViewModel.ListRow {
 
         return ListViewModel.ListRow(title: listItem.title,
-                                     detail: listItem.descriptionText,
-                                     subreddit: listItem.subreddit,
-                                     url: listItem.url,
-                                     command: BlockCommand { self.presentPostWithId(listItem.id) })
+                                     imageURL: listItem.imageURL,
+                                     author: listItem.author,
+                                     command: BlockCommand { self.presentItemWithId(listItem.author_id) })
     }
 }

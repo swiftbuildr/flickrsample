@@ -12,7 +12,7 @@ class ListWireframeTests: XCTestCase {
     var listWireframe: ListWireframe!
 
     private var mockNavigationController: MockUINavigationController!
-    private var mockListAPI: MockListAPI!
+    private var mockListAPI: MockPublicFeedAPI!
     private var mockPostWireframeInput: MockPostWireframeInput!
 
     override func setUp() {
@@ -20,7 +20,7 @@ class ListWireframeTests: XCTestCase {
         super.setUp()
 
         mockNavigationController = MockUINavigationController()
-        mockListAPI = MockListAPI()
+        mockListAPI = MockPublicFeedAPI()
         mockPostWireframeInput = MockPostWireframeInput()
 
         listWireframe = ListWireframe(navigationController: mockNavigationController,
@@ -47,7 +47,7 @@ class ListWireframeTests: XCTestCase {
 
     func test_presentPost_shouldInvokePresentOnPostWireframeWithIdAndNavigationController() {
 
-        listWireframe.presentPost(withId: "12345")
+        listWireframe.presentItem(withId: "12345")
 
         XCTAssertEqual(mockPostWireframeInput.invokedPresentCount, 1)
         XCTAssertEqual(mockPostWireframeInput.invokedPresentParameters?.id, "12345")

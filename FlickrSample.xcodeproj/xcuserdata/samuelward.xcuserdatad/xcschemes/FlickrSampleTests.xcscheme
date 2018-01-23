@@ -7,16 +7,13 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForTesting = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58803EDF16204C378C2D2189"
-               BuildableName = "FlickrSample.app"
-               BlueprintName = "FlickrSample"
+               BlueprintIdentifier = "588039D6BB490B181D72F0AB"
+               BuildableName = "FlickrSampleTests.xctest"
+               BlueprintName = "FlickrSampleTests"
                ReferencedContainer = "container:FlickrSample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,8 +24,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -41,15 +37,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "58803EDF16204C378C2D2189"
-            BuildableName = "FlickrSample.app"
-            BlueprintName = "FlickrSample"
-            ReferencedContainer = "container:FlickrSample.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,16 +51,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "58803EDF16204C378C2D2189"
-            BuildableName = "FlickrSample.app"
-            BlueprintName = "FlickrSample"
-            ReferencedContainer = "container:FlickrSample.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -83,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "58803EDF16204C378C2D2189"
-            BuildableName = "FlickrSample.app"
-            BlueprintName = "FlickrSample"
-            ReferencedContainer = "container:FlickrSample.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

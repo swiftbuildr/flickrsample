@@ -7,12 +7,30 @@
 		<key>FlickrSample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>0</integer>
+		</dict>
+		<key>FlickrSampleTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>weather-sampleUITests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>588039D6BB490B181D72F0AB</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>58803EDF16204C378C2D2189</key>
+		<dict>
+			<key>primary</key>
+			<true />
 		</dict>
 	</dict>
 </dict>

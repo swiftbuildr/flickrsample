@@ -41,7 +41,7 @@ class ListViewController: UITableViewController, ListView {
 
         super.viewDidLoad()
 
-        title = "Digest"
+        title = "Public feed"
         presenter?.viewDidLoad()
         setupTableView()
     }

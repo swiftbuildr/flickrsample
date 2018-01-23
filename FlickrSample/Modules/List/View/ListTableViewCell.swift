@@ -8,8 +8,7 @@ import UIKit
 class ListTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var subredditLabel: UILabel!
+    @IBOutlet var authorLabel: UILabel!
     
     @IBOutlet var headerImageView: UIImageView! {
         didSet {
@@ -23,17 +22,9 @@ class ListTableViewCell: UITableViewCell, NibReusable {
             guard let viewModel = viewModel else { return }
             
             titleLabel.text = viewModel.title
-            descriptionLabel.text = viewModel.detail
-            subredditLabel.text = viewModel.subreddit
-            
-            if case .image(let url) = viewModel.urlType {
-                headerImageView.kf.setImage(with: url)
-                headerImageView.isHidden = false
-            } else {
-                headerImageView.isHidden = true
-            }
-            
-            layoutIfNeeded()
+            authorLabel.text = viewModel.author
+
+            headerImageView.kf.setImage(with: viewModel.imageURL)
         }
     }
 }

@@ -7,7 +7,12 @@ import Foundation
 
 struct PostEntity {
 
+    let author_id: String
     let title: String
-    let author: String
     let url: URL?
+    let mediaURL: MediaURL
+    let descriptionText: String
+    let author: String
+    let dateTaken: Date
+    let published: Date
 }

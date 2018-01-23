@@ -6,6 +6,7 @@
 import Foundation
 
 protocol PostInteractorInput {
+
     func retrieveEntity()
 }
 
@@ -15,12 +16,12 @@ protocol PostInteractorOutput: class {
 
 class PostInteractor: PostInteractorInput {
 
-    private let api: ListAPIInterface
+    private let api: PublicFeedAPI
     private let postId: String
 
     weak var output: PostInteractorOutput?
 
-    init(api: ListAPIInterface, postId: String) {
+    init(api: PublicFeedAPI, postId: String) {
 
         self.api = api
         self.postId = postId
@@ -28,21 +29,16 @@ class PostInteractor: PostInteractorInput {
 
     func retrieveEntity() {
 
-        _ = api.request() {
+        _ = api.makeRequest() {
             result in
 
             switch result {
                 case .success(let data):
-
-                    guard let matchingPost = data.data.children.first(where: { $0.data.id == self.postId }) else { return }
-
-                    let entity = PostEntity(title: matchingPost.data.title,
-                                            author: matchingPost.data.author,
-                                            url: matchingPost.data.url)
-
-                    self.output?.finishedRetrieving(result: .success(entity))
+                    break
+//                    self.output?.finishedRetrieving(result: .success(entity))
                 case .failure(let error):
-                    self.output?.finishedRetrieving(result: .failure(error))
+//                    self.output?.finishedRetrieving(result: .failure(error))
+                    break
             }
         }
     }

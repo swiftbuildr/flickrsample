@@ -45,8 +45,8 @@ extension ListPresenter: ListInteractorOutput {
         switch result {
             case .success(let entity):
                 let viewModelFactory = ListViewModelFactory(listEntity: entity,
-                                                            presentPostWithId: { id in
-                                                                self.wireframe.presentPost(withId: id)
+                                                            presentItemWithId: { id in
+                                                                self.wireframe.presentItem(withId: id)
                                                             })
                 
                 view?.state = .loaded(viewModel: viewModelFactory.create())

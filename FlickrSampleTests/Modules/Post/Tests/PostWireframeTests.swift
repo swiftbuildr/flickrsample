@@ -10,14 +10,14 @@ class PostWireframeTests: XCTestCase {
 
     var wireframe: PostWireframe!
 
-    private var mockListAPI: MockListAPI!
+    private var mockListAPI: MockPublicFeedAPI!
     private var mockNavigationController: MockUINavigationController!
 
     override func setUp() {
 
         super.setUp()
 
-        mockListAPI = MockListAPI()
+        mockListAPI = MockPublicFeedAPI()
         mockNavigationController = MockUINavigationController()
 
         wireframe = PostWireframe(listAPI: mockListAPI)
