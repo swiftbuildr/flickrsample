@@ -22,7 +22,7 @@ class ListTableViewCell: UITableViewCell, NibReusable {
             guard let viewModel = viewModel else { return }
             
             titleLabel.text = viewModel.title
-            authorLabel.text = viewModel.author
+            authorLabel.text = viewModel.authorAndDate
 
             headerImageView.kf.setImage(with: viewModel.imageURL)
         }

@@ -16,7 +16,7 @@ struct ListViewModel {
 
         let title: String
         let imageURL: URL
-        let author: String
+        let authorAndDate: String
         let command: Command?
     }
 }

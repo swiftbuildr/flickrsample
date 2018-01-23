@@ -36,7 +36,6 @@ extension PostPresenter: PostInteractorOutput {
 
         switch result {
             case .success(let entity):
-
                 let viewModel = buildViewModel(entity: entity)
                 view?.state = .loaded(viewModel: viewModel)
             case .failure(_):

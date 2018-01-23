@@ -9,6 +9,13 @@ class ListViewModelFactory {
 
     private let listEntity: ListEntity
     private let presentItemWithId: (String) -> Void
+    private lazy var dateFormatter: DateFormatter = {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }()
 
     init(listEntity: ListEntity,
          presentItemWithId: @escaping (String) -> Void) {
@@ -25,9 +32,11 @@ class ListViewModelFactory {
 
     private func transformToRow(listItem: ListEntity.ListItem) -> ListViewModel.ListRow {
 
+        let authorAndDate = "\(listItem.author) @ \(dateFormatter.string(from: listItem.dateTaken))"
+
         return ListViewModel.ListRow(title: listItem.title,
                                      imageURL: listItem.imageURL,
-                                     author: listItem.author,
+                                     authorAndDate: authorAndDate,
                                      command: BlockCommand { self.presentItemWithId(listItem.author_id) })
     }
 }

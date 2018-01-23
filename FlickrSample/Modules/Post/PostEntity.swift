@@ -9,8 +9,8 @@ struct PostEntity {
 
     let author_id: String
     let title: String
-    let url: URL?
-    let mediaURL: MediaURL
+    let url: URL
+    let mediaURL: URL
     let descriptionText: String
     let author: String
     let dateTaken: Date
