@@ -47,10 +47,10 @@ class ListWireframeTests: XCTestCase {
 
     func test_presentPost_shouldInvokePresentOnPostWireframeWithIdAndNavigationController() {
 
-        listWireframe.presentItem(withId: "12345")
+        listWireframe.present(with: Examples.API.publicFeedItem as PostEntity)
 
         XCTAssertEqual(mockPostWireframeInput.invokedPresentCount, 1)
-        XCTAssertEqual(mockPostWireframeInput.invokedPresentParameters?.id, "12345")
+        XCTAssertEqual(mockPostWireframeInput.invokedPresentParameters?.item.author_id, Examples.Constants.author_id)
         XCTAssertEqual(mockPostWireframeInput.invokedPresentParameters?.navigationController, mockNavigationController)
     }
 }

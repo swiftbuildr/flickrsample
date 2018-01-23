@@ -13,7 +13,7 @@ struct Examples {
         static let title = "You can never cross the ocean unless you have the courage to lose sight of the shore. #funguidexp #girl #boys #iphonesia #igdaily #picoftheday #beautiful #men #instagramhub #guys #summer #love #instadaily #instagood #cute #tweegram #me #igers #love #hot #"
         static let link = URL(string: "http://www.google.com")!
         static let imageURL = URL(string: "http://www.google.com/logo.jpg")!
-        static let media = PublicFeed.PublicFeedItem.Media(m: imageURL)
+        static let media = Media(m: imageURL)
         static let date_taken = Date()
         static let description = "description"
         static let published = Date()
@@ -24,9 +24,9 @@ struct Examples {
 
     struct List {
 
-        static let listEntity = ListEntity(title: "", listItems: [listItem])
+        static let listEntity = API.publicFeed as ListEntity
 
-        static let listItem = ListEntity.ListItem(author_id: "", title: "", imageURL: URL(string: "http://www.google.com")!, descriptionText: "", author: "", dateTaken: Date())
+        static let listItem = API.publicFeedItem as PostEntity
     }
 
     struct API {

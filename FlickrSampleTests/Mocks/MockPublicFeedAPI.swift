@@ -8,15 +8,15 @@ import Foundation
 
 class MockPublicFeedAPI: PublicFeedRetriever {
 
-    var invokedMakeRequest = false
-    var invokedMakeRequestCount = 0
-    var stubbedMakeRequestCompletionResult: (Result<PublicFeed>, Void)?
+    var invokedRetrieve = false
+    var invokedRetrieveCount = 0
+    var stubbedRetrieveCompletionResult: (Result<PublicFeed>, Void)?
 
-    func makeRequest(_ completion: @escaping (Result<PublicFeed>) -> Void) {
+    func retrieve(_ completion: @escaping (Result<PublicFeed>) -> Void) {
 
-        invokedMakeRequest = true
-        invokedMakeRequestCount += 1
-        if let result = stubbedMakeRequestCompletionResult {
+        invokedRetrieve = true
+        invokedRetrieveCount += 1
+        if let result = stubbedRetrieveCompletionResult {
             completion(result.0)
         }
     }

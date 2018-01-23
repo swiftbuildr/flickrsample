@@ -53,8 +53,7 @@ class ListPresenterTests: XCTestCase {
         let listEntity = Examples.List.listEntity
         listPresenter.didGetList(result: .success(listEntity))
 
-        XCTAssertEqual(mockListView.invokedStateList.first?.loadedViewModel?.rows.first?.title,
-                       "Test title")
+        XCTAssertEqual(mockListView.invokedStateList.first?.loadedViewModel?.rows.first?.title, "")
     }
 
     func test_didGetList_shouldSetViewStateToLoadedWithViewModel_whenFailure() {

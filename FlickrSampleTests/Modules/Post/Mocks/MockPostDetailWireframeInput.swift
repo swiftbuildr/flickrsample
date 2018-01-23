@@ -10,15 +10,16 @@ class MockPostWireframeInput: PostWireframeInput {
 
     var invokedPresent = false
     var invokedPresentCount = 0
-    var invokedPresentParameters: (navigationController: UINavigationController, id: String)?
+    var invokedPresentParameters: (navigationController: UINavigationController, item: PostEntity)?
     var invokedPresentParametersList = [(navigationController: UINavigationController,
-                                                id: String)]()
+                                                item: PostEntity)]()
 
-    func present(from navigationController: UINavigationController, withId id: String) {
+    func present(from navigationController: UINavigationController,
+                 with item: PostEntity) {
 
         invokedPresent = true
         invokedPresentCount += 1
-        invokedPresentParameters = (navigationController, id)
-        invokedPresentParametersList.append((navigationController, id))
+        invokedPresentParameters = (navigationController, item)
+        invokedPresentParametersList.append((navigationController, item))
     }
 }

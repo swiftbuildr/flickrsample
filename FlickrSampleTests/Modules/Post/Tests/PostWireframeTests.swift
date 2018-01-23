@@ -20,7 +20,7 @@ class PostWireframeTests: XCTestCase {
         mockListAPI = MockPublicFeedAPI()
         mockNavigationController = MockUINavigationController()
 
-        wireframe = PostWireframe(listAPI: mockListAPI)
+        wireframe = PostWireframe()
     }
 
     override func tearDown() {
@@ -35,7 +35,7 @@ class PostWireframeTests: XCTestCase {
 
     func test_present_shouldPushPostViewControllerOnToNavigationController() {
 
-        wireframe.present(from: mockNavigationController, withId: "12345abc")
+        wireframe.present(from: mockNavigationController, with: Examples.API.publicFeedItem as PostEntity)
 
         XCTAssertEqual(mockNavigationController.invokedPushViewControllerCount, 1)
         XCTAssert(mockNavigationController.invokedPushViewControllerParameters?.viewController is PostViewController)

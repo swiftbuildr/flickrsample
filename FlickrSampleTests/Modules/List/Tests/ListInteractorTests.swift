@@ -36,12 +36,12 @@ class ListInteractorTests: XCTestCase {
     func test_getList_shouldInvokeRequestOnAPI() {
 
         listInteractor.getList()
-        XCTAssertEqual(mockListAPI.invokedMakeRequestCount, 1)
+        XCTAssertEqual(mockListAPI.invokedRetrieveCount, 1)
     }
 
     func test_getList_shouldReturnEntityViaOutput_whenSuccess() {
 
-        mockListAPI.stubbedMakeRequestCompletionResult = (.success(Examples.API.publicFeed), ())
+        mockListAPI.stubbedRetrieveCompletionResult = (.success(Examples.API.publicFeed), ())
 
         listInteractor.getList()
 
@@ -49,14 +49,14 @@ class ListInteractorTests: XCTestCase {
 
         let result = mockListInteractorOutput.invokedDidGetListParameters?.0
         XCTAssertNotNil(result?.successfulResult)
-        XCTAssertEqual(result?.successfulResult?.listItems.first?.author_id,
+        XCTAssertEqual(result?.successfulResult?.items.first?.author_id,
                        Examples.API.publicFeedItem.author_id)
         XCTAssertNil(result?.failureResult)
     }
 
     func test_getList_shouldReturnErrorViaOutput_whenFailure() {
 
-        mockListAPI.stubbedMakeRequestCompletionResult = (.failure(Examples.error), ())
+        mockListAPI.stubbedRetrieveCompletionResult = (.failure(Examples.error), ())
 
         listInteractor.getList()
 

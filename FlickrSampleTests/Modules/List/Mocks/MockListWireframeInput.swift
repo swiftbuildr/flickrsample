@@ -7,18 +7,18 @@ import Foundation
 @testable import FlickrSample
 
 class MockListWireframeInput: ListWireframeInput {
+    
+    var invokedPresentWith = false
+    var invokedPresentWithCount = 0
+    var invokedPresentWithParameters: (postEntity: PostEntity, Void)?
+    var invokedPresentWithParametersList = [(postEntity: PostEntity, Void)]()
 
-    var invokedPresentItem = false
-    var invokedPresentItemCount = 0
-    var invokedPresentItemParameters: (id: String, Void)?
-    var invokedPresentItemParametersList = [(id: String, Void)]()
+    func present(with postEntity: PostEntity) {
 
-    func presentItem(withId id: String) {
-
-        invokedPresentItem = true
-        invokedPresentItemCount += 1
-        invokedPresentItemParameters = (id, ())
-        invokedPresentItemParametersList.append((id, ()))
+        invokedPresentWith = true
+        invokedPresentWithCount += 1
+        invokedPresentWithParameters = (postEntity, ())
+        invokedPresentWithParametersList.append((postEntity, ()))
     }
 
     var invokedPresent = false

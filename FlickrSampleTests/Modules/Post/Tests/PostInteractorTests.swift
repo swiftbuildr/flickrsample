@@ -15,10 +15,10 @@ class PostInteractorTests: XCTestCase {
     override func setUp() {
 
         super.setUp()
-
-        mockListAPI = MockPublicFeedAPI()
-        postInteractor = PostInteractor(publicFeedItem: mockListAPI,
-                                        publicFeedItem: "12345")
+//
+//        mockListAPI = MockPublicFeedAPI()
+//        postInteractor = PostInteractor(publicFeedItem: mockListAPI,
+//                                        publicFeedItem: "12345")
     }
 
     // MARK: -
