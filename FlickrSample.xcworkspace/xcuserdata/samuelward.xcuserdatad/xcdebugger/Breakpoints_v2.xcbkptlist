@@ -42,13 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlickrSample/Modules/Post/PostlInteractor.swift"
-            timestampString = "538435938.905303"
+            timestampString = "538439033.114167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "retrieveEntity()"
-            landmarkType = "7">
+            startingLineNumber = "35"
+            endingLineNumber = "35">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

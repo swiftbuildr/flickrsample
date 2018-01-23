@@ -5,6 +5,6 @@
 
 import Foundation
 
-protocol PublicFeedAPI {
-    func makeRequest(_ completion: @escaping (Result<PublicFeed>) -> Void)
+protocol PublicFeedRetriever {
+    func retrieve(_ completion: @escaping (Result<PublicFeed>) -> Void)
 }

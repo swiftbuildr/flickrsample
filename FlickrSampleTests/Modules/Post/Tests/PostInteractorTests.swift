@@ -17,8 +17,8 @@ class PostInteractorTests: XCTestCase {
         super.setUp()
 
         mockListAPI = MockPublicFeedAPI()
-        postInteractor = PostInteractor(api: mockListAPI,
-                                        postId: "12345")
+        postInteractor = PostInteractor(publicFeedItem: mockListAPI,
+                                        publicFeedItem: "12345")
     }
 
     // MARK: -

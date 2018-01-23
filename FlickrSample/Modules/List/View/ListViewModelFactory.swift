@@ -8,7 +8,7 @@ import Foundation
 class ListViewModelFactory {
 
     private let listEntity: ListEntity
-    private let presentItemWithId: (String) -> Void
+    private let presentItemWithId: (PostEntity) -> Void
     private lazy var dateFormatter: DateFormatter = {
 
         let dateFormatter = DateFormatter()
@@ -18,7 +18,7 @@ class ListViewModelFactory {
     }()
 
     init(listEntity: ListEntity,
-         presentItemWithId: @escaping (String) -> Void) {
+         presentItemWithId: @escaping (PostEntity) -> Void) {
 
         self.listEntity = listEntity
         self.presentItemWithId = presentItemWithId
@@ -26,17 +26,17 @@ class ListViewModelFactory {
 
     func create() -> ListViewModel {
 
-        let listRows = listEntity.listItems.map(transformToRow)
+        let listRows = listEntity.items.map(transformToRow)
         return ListViewModel(rows: listRows)
     }
 
-    private func transformToRow(listItem: ListEntity.ListItem) -> ListViewModel.ListRow {
+    private func transformToRow(postEntity: PostEntity) -> ListViewModel.ListRow {
 
-        let authorAndDate = "\(listItem.author) @ \(dateFormatter.string(from: listItem.dateTaken))"
+        let authorAndDate = "\(postEntity.author) @ \(dateFormatter.string(from: postEntity.date_taken))"
 
-        return ListViewModel.ListRow(title: listItem.title,
-                                     imageURL: listItem.imageURL,
+        return ListViewModel.ListRow(title: postEntity.title,
+                                     imageURL: postEntity.media.m,
                                      authorAndDate: authorAndDate,
-                                     command: BlockCommand { self.presentItemWithId(listItem.author_id) })
+                                     command: BlockCommand { self.presentItemWithId(postEntity) })
     }
 }

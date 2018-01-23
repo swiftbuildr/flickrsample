@@ -6,7 +6,7 @@
 import UIKit
 
 protocol ListWireframeInput {
-    func presentItem(withId id: String)
+    func present(with postEntity: PostEntity)
     func present()
 }
 
@@ -18,14 +18,14 @@ class ListWireframe: ListWireframeInput {
 
     private let navigationController: UINavigationController
     private let postWireframe: PostWireframeInput
-    private let api: PublicFeedAPI
+    private let api: PublicFeedRetriever
 
     private let storyboard: UIStoryboard = .list
     private let viewControllerIdentifier = "ListViewController"
 
 
     init(navigationController: UINavigationController,
-         api: PublicFeedAPI,
+         api: PublicFeedRetriever,
          postWireframe: PostWireframeInput) {
 
         self.navigationController = navigationController
@@ -34,12 +34,13 @@ class ListWireframe: ListWireframeInput {
     }
 
     // MARK: - ListWireframeInput
-    func presentItem(withId id: String) {
-        
-        postWireframe.present(from: navigationController, withId: id)
+    func present(with postEntity: PostEntity) {
+
+        postWireframe.present(from: navigationController, with: postEntity)
     }
-    
+
     func present() {
+
         navigationController.viewControllers = [buildModule()]
     }
 
@@ -68,5 +69,4 @@ class ListWireframe: ListWireframeInput {
         interactor.output = presenter
         viewController.presenter = presenter
     }
-
 }

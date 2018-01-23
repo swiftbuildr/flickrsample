@@ -10,7 +10,7 @@ import XCTest
 
 class JSONPublicFeedAPITests: XCTestCase {
 
-    var jsonPublicFeedAPI: JSONPublicFeedAPI!
+    var jsonPublicFeedAPI: NetworkedPublicFeedRetriver!
 
     private var mockURLSession: MockURLSession!
 
@@ -19,7 +19,7 @@ class JSONPublicFeedAPITests: XCTestCase {
         super.setUp()
 
         mockURLSession = MockURLSession()
-        jsonPublicFeedAPI = JSONPublicFeedAPI(urlSession: mockURLSession)
+        jsonPublicFeedAPI = NetworkedPublicFeedRetriver(urlSession: mockURLSession)
     }
 
     // MARK: - makeRequest
@@ -34,7 +34,7 @@ class JSONPublicFeedAPITests: XCTestCase {
 
         var savedResult: Result<PublicFeed>?
 
-        jsonPublicFeedAPI.makeRequest { result in savedResult = result }
+        jsonPublicFeedAPI.retrieve { result in savedResult = result }
 
         XCTAssertNotNil(savedResult?.successfulResult)
         XCTAssertNil(savedResult?.failureResult)
@@ -46,7 +46,7 @@ class JSONPublicFeedAPITests: XCTestCase {
         
         var savedResult: Result<PublicFeed>?
         
-        jsonPublicFeedAPI.makeRequest { result in savedResult = result }
+        jsonPublicFeedAPI.retrieve { result in savedResult = result }
         
         XCTAssertEqual(savedResult?.failureResult?.code, Errors.noData.code)
         XCTAssertNil(savedResult?.successfulResult)
@@ -58,7 +58,7 @@ class JSONPublicFeedAPITests: XCTestCase {
         
         var savedResult: Result<PublicFeed>?
         
-        jsonPublicFeedAPI.makeRequest { result in savedResult = result }
+        jsonPublicFeedAPI.retrieve { result in savedResult = result }
         
         XCTAssertEqual(savedResult?.failureResult?.code, Errors.jsonParsingFailed.code)
         XCTAssertNil(savedResult?.successfulResult)

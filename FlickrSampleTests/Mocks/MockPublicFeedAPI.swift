@@ -6,7 +6,7 @@
 import Foundation
 @testable import FlickrSample
 
-class MockPublicFeedAPI: PublicFeedAPI {
+class MockPublicFeedAPI: PublicFeedRetriever {
 
     var invokedMakeRequest = false
     var invokedMakeRequestCount = 0

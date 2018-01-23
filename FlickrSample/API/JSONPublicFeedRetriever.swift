@@ -5,7 +5,7 @@
 
 import Foundation
 
-class JSONPublicFeedAPI: PublicFeedAPI {
+class NetworkedPublicFeedRetriver: PublicFeedRetriever {
 
     private let urlSession: URLSession
     
@@ -20,7 +20,7 @@ class JSONPublicFeedAPI: PublicFeedAPI {
         self.urlSession = urlSession
     }
 
-    func makeRequest(_ completion: @escaping (Result<PublicFeed>) -> Void) {
+    func retrieve(_ completion: @escaping (Result<PublicFeed>) -> Void) {
 
         let jsonDecoder = JSONDecoder()
         jsonDecoder.dateDecodingStrategy = .formatted(self.dateFormatter)

@@ -16,10 +16,10 @@ protocol ListInteractorOutput: class {
 
 class ListInteractor: ListInteractorInput {
 
-    private let api: PublicFeedAPI
+    private let api: PublicFeedRetriever
     weak var output: ListInteractorOutput?
 
-    init(api: PublicFeedAPI) {
+    init(api: PublicFeedRetriever) {
 
         self.api = api
     }
@@ -31,26 +31,12 @@ class ListInteractor: ListInteractorInput {
 
     func fetch(completion: @escaping (Result<ListEntity>) -> Void) {
 
-        api.makeRequest() {
+        api.retrieve() {
             result in
 
             switch result {
                 case .success(let data):
-
-                    let listItems: [ListEntity.ListItem] = data.items.map {
-
-                        ListEntity.ListItem(author_id: $0.author_id,
-                                            title: $0.title,
-                                            imageURL: $0.media.m,
-                                            descriptionText: $0.description,
-                                            author: $0.author,
-                                            dateTaken: $0.date_taken)
-                    }
-
-                    let entity = ListEntity(title: data.title,
-                                            listItems: listItems)
-
-                    completion(.success(entity))
+                    completion(.success(data))
                 case .failure(let error):
                     completion(.failure(error))
             }

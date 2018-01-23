@@ -18,11 +18,11 @@ class AppCoordinator {
 
         guard let navigationController = window.rootViewController as? UINavigationController else { return }
 
-        let weatherDetailWireframe = PostWireframe(listAPI: Services.listAPI)
+        let postWireframe = PostWireframe()
 
         let listWireframe = ListWireframe(navigationController: navigationController,
                                           api: Services.listAPI,
-                                          postWireframe: weatherDetailWireframe)
+                                          postWireframe: postWireframe)
 
         listWireframe.present()
     }

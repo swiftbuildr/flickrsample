@@ -8,19 +8,19 @@ import Foundation
 enum MediaURL {
     case m(URL)
 }
-
-struct ListEntity {
-
-    let title: String
-    let listItems: [ListItem]
-
-    struct ListItem {
-        let author_id: String
-        let title: String
-        let imageURL: URL
-        let descriptionText: String
-        let author: String
-        let dateTaken: Date
-    }
-}
+//
+//struct ListEntity {
+//
+//    let title: String
+//    let listItems: [ListItem]
+//
+//    struct ListItem {
+//        let author_id: String
+//        let title: String
+//        let imageURL: URL
+//        let descriptionText: String
+//        let author: String
+//        let dateTaken: Date
+//    }
+//}
 

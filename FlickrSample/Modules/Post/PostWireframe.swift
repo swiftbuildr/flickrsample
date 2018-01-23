@@ -6,30 +6,26 @@
 import UIKit
 
 protocol PostWireframeInput {
-    func present(from navigationController: UINavigationController, withId id: String)
+    func present(from navigationController: UINavigationController,
+                 with item: PostEntity)
 }
 
 class PostWireframe: PostWireframeInput {
 
     private let storyboard: UIStoryboard = .post
     private let viewControllerIdentifier = "PostViewController"
-    private let listAPI: PublicFeedAPI
 
-    init(listAPI: PublicFeedAPI) {
+    func present(from navigationController: UINavigationController,
+                 with item: PostEntity) {
 
-        self.listAPI = listAPI
-    }
-
-    func present(from navigationController: UINavigationController, withId id: String) {
-
-        navigationController.pushViewController(buildModule(withPostId: id), animated: true)
+        navigationController.pushViewController(buildModule(withItem: item), animated: true)
     }
 
     // MARK: - Private
-    private func buildModule(withPostId postId: String) -> PostViewController {
+    private func buildModule(withItem item: PostEntity) -> PostViewController {
 
         let viewController = instantiateViewController()
-        wireUp(viewController: viewController, postId: postId)
+        wireUp(viewController: viewController, postEntity: item)
         return viewController
     }
 
@@ -39,9 +35,9 @@ class PostWireframe: PostWireframeInput {
         return viewController as! PostViewController
     }
 
-    private func wireUp(viewController: PostViewController, postId: String) {
+    private func wireUp(viewController: PostViewController, postEntity: PostEntity) {
 
-        let interactor = PostInteractor(api: listAPI, postId: postId)
+        let interactor = PostInteractor(postEntity: postEntity)
 
         let presenter = PostPresenter(view: viewController,
                                       wireframe: self,

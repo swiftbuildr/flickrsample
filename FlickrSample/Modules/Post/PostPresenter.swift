@@ -46,7 +46,7 @@ extension PostPresenter: PostInteractorOutput {
     private func buildViewModel(entity: PostEntity) -> PostViewModel {
 
         let imageRow: PostViewModel.ImageRow?
-        if case .image(let url) = URLType(url: entity.url) {
+        if case .image(let url) = URLType(url: entity.media.m) {
             imageRow = PostViewModel.ImageRow(url: url)
         } else {
             imageRow = nil
