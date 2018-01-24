@@ -22,4 +22,17 @@ class MockPostWireframeInput: PostWireframeInput {
         invokedPresentParameters = (navigationController, item)
         invokedPresentParametersList.append((navigationController, item))
     }
+
+    var invokedPresentShare = false
+    var invokedPresentShareCount = 0
+    var invokedPresentShareParameters: (with: ShareWireframeContext, Void)?
+    var invokedPresentShareParametersList = [(with: ShareWireframeContext, Void)]()
+
+    func presentShare(with: ShareWireframeContext) {
+
+        invokedPresentShare = true
+        invokedPresentShareCount += 1
+        invokedPresentShareParameters = (with, ())
+        invokedPresentShareParametersList.append((with, ()))
+    }
 }

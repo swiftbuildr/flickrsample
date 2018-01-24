@@ -8,17 +8,36 @@ import UIKit
 protocol PostWireframeInput {
     func present(from navigationController: UINavigationController,
                  with item: PostEntity)
+
+    func presentShare(with: ShareWireframeContext)
 }
 
 class PostWireframe: PostWireframeInput {
 
     private let storyboard: UIStoryboard = .post
     private let viewControllerIdentifier = "PostViewController"
+    private let shareWireframeInput: ShareWireframeInput
+
+    private weak var viewController: PostViewController?
+
+    init(shareWireframeInput: ShareWireframeInput) {
+
+        self.shareWireframeInput = shareWireframeInput
+    }
 
     func present(from navigationController: UINavigationController,
                  with item: PostEntity) {
 
-        navigationController.pushViewController(buildModule(withItem: item), animated: true)
+        let viewController = buildModule(withItem: item)
+        self.viewController = viewController
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    func presentShare(with context: ShareWireframeContext) {
+
+        guard let viewController = viewController else { return }
+        shareWireframeInput.present(from: viewController,
+                                    with: context)
     }
 
     // MARK: - Private

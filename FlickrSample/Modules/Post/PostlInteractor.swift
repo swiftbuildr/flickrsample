@@ -6,7 +6,6 @@
 import Foundation
 
 protocol PostInteractorInput {
-
     func retrieveEntity()
 }
 
@@ -17,7 +16,6 @@ protocol PostInteractorOutput: class {
 class PostInteractor: PostInteractorInput {
 
     private let postEntity: PostEntity
-
     weak var output: PostInteractorOutput?
 
     init(postEntity: PostEntity) {

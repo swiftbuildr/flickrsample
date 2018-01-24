@@ -18,8 +18,8 @@ class AppCoordinator {
 
         guard let navigationController = window.rootViewController as? UINavigationController else { return }
 
-        let postWireframe = PostWireframe()
-
+        let shareWireframe = ShareWireframe()
+        let postWireframe = PostWireframe(shareWireframeInput: shareWireframe)
         let listWireframe = ListWireframe(navigationController: navigationController,
                                           api: Services.listAPI,
                                           postWireframe: postWireframe)

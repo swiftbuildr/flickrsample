@@ -43,4 +43,12 @@ class PostPresenterTests: XCTestCase {
         postPresenter.viewDidLoad()
         XCTAssertEqual(mockPostInteractorInput.invokedRetrieveEntityCount, 1)
     }
+
+    // MARK: - didTapShare
+
+    func test_didTapShare_shouldInvokeShareView() {
+
+        postPresenter.didTapShare()
+        XCTAssertEqual(mockPostWireframeInput.invokedPresentShareCount, 1)
+    }
 }

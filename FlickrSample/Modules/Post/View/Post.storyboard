@@ -139,7 +139,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="VM3-5K-NQx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="qOT-Di-kgd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="qOT-Di-kgd">
+                            <connections>
+                                <action selector="shareItemPressed" destination="C96-zl-vv3" id="aJz-5l-lKD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>

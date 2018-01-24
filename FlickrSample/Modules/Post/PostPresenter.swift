@@ -4,9 +4,11 @@
 //
 
 import Foundation
+import Kingfisher
 
 protocol PostPresenterInput: class {
     func viewDidLoad()
+    func didTapShare()
 }
 
 class PostPresenter: PostPresenterInput {
@@ -14,6 +16,7 @@ class PostPresenter: PostPresenterInput {
     private weak var view: PostView?
     private let wireframe: PostWireframeInput
     private let interactor: PostInteractorInput
+    private var entity: PostEntity?
 
     init(view: PostView,
          wireframe: PostWireframeInput,
@@ -28,6 +31,18 @@ class PostPresenter: PostPresenterInput {
 
         interactor.retrieveEntity()
     }
+
+    func didTapShare() {
+
+        guard let entity = entity else { return }
+
+        KingfisherManager.shared.cache.retrieveImage(forKey: entity.media.m.absoluteString,
+                                                     options: .none) { (image, cacheType) in
+
+            guard let image = image else { return }
+            self.wireframe.presentShare(with: (linkURL: entity.link, imageURL: image))
+        }
+    }
 }
 
 extension PostPresenter: PostInteractorOutput {
@@ -36,6 +51,8 @@ extension PostPresenter: PostInteractorOutput {
 
         switch result {
             case .success(let entity):
+
+                self.entity = entity
                 let viewModel = buildViewModel(entity: entity)
                 view?.state = .loaded(viewModel: viewModel)
             case .failure(_):
