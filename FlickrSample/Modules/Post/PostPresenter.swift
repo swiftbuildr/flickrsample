@@ -16,7 +16,7 @@ class PostPresenter: PostPresenterInput {
     private weak var view: PostView?
     private let wireframe: PostWireframeInput
     private let interactor: PostInteractorInput
-    private var entity: PostEntity?
+    var cachedImage: UIImage?
 
     init(view: PostView,
          wireframe: PostWireframeInput,
@@ -34,14 +34,8 @@ class PostPresenter: PostPresenterInput {
 
     func didTapShare() {
 
-        guard let entity = entity else { return }
-
-        KingfisherManager.shared.cache.retrieveImage(forKey: entity.media.m.absoluteString,
-                                                     options: .none) { (image, cacheType) in
-
-            guard let image = image else { return }
-            self.wireframe.presentShare(with: (linkURL: entity.link, imageURL: image))
-        }
+        guard let image = cachedImage else { return }
+        self.wireframe.presentShare(with: image)
     }
 }
 
@@ -51,8 +45,6 @@ extension PostPresenter: PostInteractorOutput {
 
         switch result {
             case .success(let entity):
-
-                self.entity = entity
                 let viewModel = buildViewModel(entity: entity)
                 view?.state = .loaded(viewModel: viewModel)
             case .failure(_):
@@ -62,13 +54,7 @@ extension PostPresenter: PostInteractorOutput {
 
     private func buildViewModel(entity: PostEntity) -> PostViewModel {
 
-        let imageRow: PostViewModel.ImageRow?
-        if case .image(let url) = URLType(url: entity.media.m) {
-            imageRow = PostViewModel.ImageRow(url: url)
-        } else {
-            imageRow = nil
-        }
-
+        let imageRow = PostViewModel.ImageRow(url: entity.media.m) { [weak self] image in self?.cachedImage = image }
         let titleRow = PostViewModel.TitleRow(title: entity.title)
         let authorRow = PostViewModel.MetaDataRow(descriptionText: entity.description,
                                                   author: entity.author,
@@ -76,14 +62,11 @@ extension PostPresenter: PostInteractorOutput {
                                                   dateTaken: entity.date_taken,
                                                   tags: entity.tags)
 
-        let rows: [Rowable?] = [
-            imageRow,
-            titleRow,
-            authorRow,
-        ]
 
         let viewModel = PostViewModel(title: entity.title,
-                                      rows: rows.flatMap { $0 })
+                                      rows: [imageRow,
+                                             titleRow,
+                                             authorRow])
         return viewModel
     }
 }

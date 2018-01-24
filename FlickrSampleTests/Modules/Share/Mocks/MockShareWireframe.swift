@@ -7,19 +7,18 @@ import UIKit
 @testable import FlickrSample
 
 class MockShareWireframeInput: ShareWireframeInput {
-
+    
     var invokedPresent = false
     var invokedPresentCount = 0
-    var invokedPresentParameters: (navigationController: UINavigationController, context: ShareWireframeContext)?
-    var invokedPresentParametersList = [(navigationController: UINavigationController,
-                                                context: ShareWireframeContext)]()
+    var invokedPresentParameters: (viewController: UIViewController, image: UIImage)?
+    var invokedPresentParametersList = [(viewController: UIViewController, image: UIImage)]()
 
-    func present(from navigationController: UINavigationController,
-                 with context: ShareWireframeContext) {
+    func present(from viewController: UIViewController,
+                 with image: UIImage) {
 
         invokedPresent = true
         invokedPresentCount += 1
-        invokedPresentParameters = (navigationController, context)
-        invokedPresentParametersList.append((navigationController, context))
+        invokedPresentParameters = (viewController, image)
+        invokedPresentParametersList.append((viewController, image))
     }
 }

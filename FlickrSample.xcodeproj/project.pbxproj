@@ -28,6 +28,7 @@
 		58803DBDD0FF715B95CC4A89 /* MockListWireframeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880307058E2DD1FD0828EAC /* MockListWireframeInput.swift */; };
 		58803E46EBFA06050D317806 /* PostPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803075953161EF683F0D2C /* PostPresenterTests.swift */; };
 		58803F31898730B2D31727B7 /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803B457099EA86446D9FC7 /* Examples.swift */; };
+		58803FC499823736C078A8E8 /* MockPostInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803F0B538CECA3BD3B6C9B /* MockPostInteractorOutput.swift */; };
 		8A16B82F2018A85500A315E9 /* MockShareWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58803594C27FDBCBA8908FD5 /* MockShareWireframe.swift */; };
 		8A4C24F720155A1C0096F9FA /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4C24F620155A1C0096F9FA /* UIView+Loading.swift */; };
 		8A4C25162017BA1D0096F9FA /* MockPostInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4C25132017BA1C0096F9FA /* MockPostInteractorInput.swift */; };
@@ -108,6 +109,7 @@
 		58803E6C8D27369708DE0F69 /* PublicFeedItemRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicFeedItemRetriever.swift; sourceTree = "<group>"; };
 		58803EE066447C1DD5EB3A9F /* ShareWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWireframe.swift; sourceTree = "<group>"; };
 		58803EEA1C90259E8F4A30D1 /* JSONPublicFeedAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPublicFeedAPITests.swift; sourceTree = "<group>"; };
+		58803F0B538CECA3BD3B6C9B /* MockPostInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockPostInteractorOutput.swift; path = FlickrSampleTests/Modules/Post/Mocks/MockPostInteractorOutput.swift; sourceTree = SOURCE_ROOT; };
 		6E9047C19B9327AE7774E963 /* Pods-FlickrSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrSampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrSampleTests/Pods-FlickrSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A4C24F620155A1C0096F9FA /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 		8A4C25132017BA1C0096F9FA /* MockPostInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPostInteractorInput.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				58803A1A7C06CA060179C197 /* PostWireframeTests.swift */,
 				58803075953161EF683F0D2C /* PostPresenterTests.swift */,
 				5880321C6AE9C0A05ECD7C15 /* PostInteractorTests.swift */,
+				58803F0B538CECA3BD3B6C9B /* MockPostInteractorOutput.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				58803C37E0ED14E2CC64842B /* MockURLSession.swift in Sources */,
 				58803F31898730B2D31727B7 /* Examples.swift in Sources */,
 				58803BE9868B5230A7EE2A44 /* MockURLSessionDataTask.swift in Sources */,
+				58803FC499823736C078A8E8 /* MockPostInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

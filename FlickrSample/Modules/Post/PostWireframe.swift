@@ -9,7 +9,7 @@ protocol PostWireframeInput {
     func present(from navigationController: UINavigationController,
                  with item: PostEntity)
 
-    func presentShare(with: ShareWireframeContext)
+    func presentShare(with image: UIImage)
 }
 
 class PostWireframe: PostWireframeInput {
@@ -22,6 +22,7 @@ class PostWireframe: PostWireframeInput {
 
     init(shareWireframeInput: ShareWireframeInput) {
 
+
         self.shareWireframeInput = shareWireframeInput
     }
 
@@ -33,11 +34,11 @@ class PostWireframe: PostWireframeInput {
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func presentShare(with context: ShareWireframeContext) {
+    func presentShare(with image: UIImage) {
 
         guard let viewController = viewController else { return }
         shareWireframeInput.present(from: viewController,
-                                    with: context)
+                                    with: image)
     }
 
     // MARK: - Private

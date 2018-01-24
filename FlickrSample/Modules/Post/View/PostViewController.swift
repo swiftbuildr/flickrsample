@@ -40,7 +40,6 @@ class PostViewController: UITableViewController, PostView {
         super.viewDidLoad()
 
         presenter?.viewDidLoad()
-
         tableView.tableFooterView = UIView()
     }
 
@@ -56,9 +55,7 @@ class PostViewController: UITableViewController, PostView {
 
         guard let viewModel = state.loadedViewModel else { return UITableViewCell() }
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.rows[
-                indexPath.row
-                ].reuseIdentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.rows[indexPath.row].reuseIdentifier,
                                                  for: indexPath)
 
         switch cell {

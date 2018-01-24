@@ -48,7 +48,28 @@ class PostPresenterTests: XCTestCase {
 
     func test_didTapShare_shouldInvokeShareView() {
 
+        postPresenter.cachedImage = UIImage()
         postPresenter.didTapShare()
         XCTAssertEqual(mockPostWireframeInput.invokedPresentShareCount, 1)
+    }
+
+    func test_didTapShare_shouldNotInvokeShareView_whenThereIsNoCachedImage() {
+
+        postPresenter.cachedImage = nil
+        postPresenter.didTapShare()
+        XCTAssertEqual(mockPostWireframeInput.invokedPresentShareCount, 0)
+    }
+
+    func test_finishedRetrieving_shouldUpdateViewState_whenSuccessfullyFetchedEntity() {
+
+        postPresenter.finishedRetrieving(result: .success(Examples.API.publicFeedItem as PostEntity))
+        XCTAssertNotNil(mockPostView.invokedState?.loadedViewModel)
+        XCTAssert(mockPostView.invokedState?.isError == false)
+    }
+
+    func test_finishedRetrieving_shouldUpdateViewState_whenUnsuccessfullyFetchedEntity() {
+
+        postPresenter.finishedRetrieving(result: .failure(Examples.error))
+        XCTAssert(mockPostView.invokedState?.isError == true)
     }
 }

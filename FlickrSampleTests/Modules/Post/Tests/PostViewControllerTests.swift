@@ -17,6 +17,12 @@ class PostViewControllerTests: XCTestCase {
         viewController = PostViewController.()
     }
 
+    override func tearDown() {
+
+        viewController = nil
+        super.tearDown()
+    }
+
     // MARK: -
 
     func test__should() {

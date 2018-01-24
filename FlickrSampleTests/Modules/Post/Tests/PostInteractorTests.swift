@@ -10,16 +10,30 @@ class PostInteractorTests: XCTestCase {
 
     var postInteractor: PostInteractor!
 
-    private var mockListAPI: MockPublicFeedAPI!
+    var mockPostInteractorOutput: MockPostInteractorOutput!
 
     override func setUp() {
 
         super.setUp()
-//
-//        mockListAPI = MockPublicFeedAPI()
-//        postInteractor = PostInteractor(publicFeedItem: mockListAPI,
-//                                        publicFeedItem: "12345")
+
+        mockPostInteractorOutput = MockPostInteractorOutput()
+        postInteractor = PostInteractor(postEntity: Examples.API.publicFeedItem as PostEntity)
+
+        postInteractor.output = mockPostInteractorOutput
+
+    }
+
+    override func tearDown() {
+
+        postInteractor = nil
+        mockPostInteractorOutput = nil
+        super.tearDown()
     }
 
     // MARK: -
+    func test_retrieve_shouldGetPostEntity() {
+
+        postInteractor.retrieveEntity()
+        XCTAssert(mockPostInteractorOutput.invokedFinishedRetrieving)
+    }
 }

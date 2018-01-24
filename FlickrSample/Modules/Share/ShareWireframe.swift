@@ -5,18 +5,17 @@
 
 import UIKit
 
-typealias ShareWireframeContext = (linkURL: URL, imageURL: UIImage)
-
 protocol ShareWireframeInput {
     func present(from viewController: UIViewController,
-                 with context: ShareWireframeContext)
+                 with image: UIImage)
 }
 
 class ShareWireframe: ShareWireframeInput {
 
-    func present(from viewController: UIViewController, with context: ShareWireframeContext) {
+    func present(from viewController: UIViewController, with image: UIImage) {
 
-        let activityViewController = UIActivityViewController(activityItems: ["Check this Flickr item out:", context.linkURL, context.imageURL],
+        // TODO: Put activity view controller behind protocol so it can be injected in tests
+        let activityViewController = UIActivityViewController(activityItems: [image],
                                                               applicationActivities: nil)
         viewController.present(activityViewController, animated: true, completion: nil)
     }

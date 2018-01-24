@@ -22,6 +22,13 @@ class JSONPublicFeedAPITests: XCTestCase {
         jsonPublicFeedAPI = NetworkedPublicFeedRetriver(urlSession: mockURLSession)
     }
 
+    override func tearDown() {
+
+        jsonPublicFeedAPI = nil
+        mockURLSession = nil
+        super.tearDown()
+    }
+
     // MARK: - makeRequest
 
     func test_makeRequest_shouldCompleteWithModelObject_whenSuccessful() {

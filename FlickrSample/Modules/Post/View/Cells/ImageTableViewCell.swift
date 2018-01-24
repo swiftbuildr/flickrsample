@@ -20,7 +20,14 @@ class ImageTableViewCell: UITableViewCell, NibReusable {
     var viewModel: PostViewModel.ImageRow? {
         didSet {
             guard let viewModel = viewModel else { return }
-            headerImageView.kf.setImage(with: viewModel.url)
+            
+            headerImageView.kf.setImage(with: viewModel.url,
+                                        placeholder: nil,
+                                        options: nil,
+                                        progressBlock: nil,
+                                        completionHandler: { (image, error, cacheType, url) in
+                                            viewModel.completion(image)
+            })
         }
     }
 }

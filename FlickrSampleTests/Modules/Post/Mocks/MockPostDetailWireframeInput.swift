@@ -25,14 +25,14 @@ class MockPostWireframeInput: PostWireframeInput {
 
     var invokedPresentShare = false
     var invokedPresentShareCount = 0
-    var invokedPresentShareParameters: (with: ShareWireframeContext, Void)?
-    var invokedPresentShareParametersList = [(with: ShareWireframeContext, Void)]()
+    var invokedPresentShareParameters: (image: UIImage, Void)?
+    var invokedPresentShareParametersList = [(image: UIImage, Void)]()
 
-    func presentShare(with: ShareWireframeContext) {
+    func presentShare(with image: UIImage) {
 
         invokedPresentShare = true
         invokedPresentShareCount += 1
-        invokedPresentShareParameters = (with, ())
-        invokedPresentShareParametersList.append((with, ()))
+        invokedPresentShareParameters = (image, ())
+        invokedPresentShareParametersList.append((image, ()))
     }
 }

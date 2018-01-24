@@ -21,6 +21,7 @@ struct PostViewModel {
     struct ImageRow: Rowable {
         let reuseIdentifier = ImageTableViewCell.reuseIdentifier
         let url: URL
+        let completion: ((UIImage?) -> Void)
     }
 
     struct MetaDataRow: Rowable {

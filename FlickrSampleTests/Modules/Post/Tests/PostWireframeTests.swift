@@ -12,6 +12,7 @@ class PostWireframeTests: XCTestCase {
 
     private var mockListAPI: MockPublicFeedAPI!
     private var mockNavigationController: MockUINavigationController!
+    private var mockShareWireframeInput: MockShareWireframeInput!
 
     override func setUp() {
 
@@ -19,8 +20,9 @@ class PostWireframeTests: XCTestCase {
 
         mockListAPI = MockPublicFeedAPI()
         mockNavigationController = MockUINavigationController()
+        mockShareWireframeInput = MockShareWireframeInput()
 
-        wireframe = PostWireframe()
+        wireframe = PostWireframe(shareWireframeInput: mockShareWireframeInput)
     }
 
     override func tearDown() {
@@ -28,6 +30,7 @@ class PostWireframeTests: XCTestCase {
         wireframe = nil
         mockListAPI = nil
         mockNavigationController = nil
+        mockShareWireframeInput = nil
         super.tearDown()
     }
 
